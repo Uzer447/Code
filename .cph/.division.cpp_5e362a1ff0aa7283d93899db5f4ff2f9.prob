@@ -1,0 +1,1 @@
+{"name":"Local: division","url":"c:\\Users\\ACER\\OneDrive\\Desktop\\Code\\division.cpp","tests":[{"id":1660979271054,"input":"7\n-789\n1299\n1300\n1399\n1400\n1679\n2300","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\ACER\\OneDrive\\Desktop\\Code\\division.cpp","group":"local","local":true}

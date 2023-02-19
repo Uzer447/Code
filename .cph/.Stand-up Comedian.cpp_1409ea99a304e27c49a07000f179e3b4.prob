@@ -1,0 +1,1 @@
+{"name":"Local: Stand-up Comedian","url":"c:\\Users\\ACER\\OneDrive\\Desktop\\Code\\Stand-up Comedian.cpp","tests":[{"id":1674572497086,"input":"4\n5 0 0 0\n0 0 0 5\n8 5 10 6\n8 2 6 7","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\ACER\\OneDrive\\Desktop\\Code\\Stand-up Comedian.cpp","group":"local","local":true}

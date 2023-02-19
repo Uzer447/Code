@@ -1,0 +1,1 @@
+{"name":"Local: yes","url":"c:\\Users\\ACER\\OneDrive\\Desktop\\Code\\yes.cpp","tests":[{"id":1660671565383,"input":"10\nYES\nyES\nyes\nYes\nYeS\nNoo\norZ\nyEz\nYas\nXES","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\ACER\\OneDrive\\Desktop\\Code\\yes.cpp","group":"local","local":true}

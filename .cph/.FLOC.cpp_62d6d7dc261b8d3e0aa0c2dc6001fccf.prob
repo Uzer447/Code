@@ -1,0 +1,1 @@
+{"name":"Local: FLOC","url":"c:\\Users\\ACER\\OneDrive\\Desktop\\Code\\FLOC.cpp","tests":[{"id":1673792553653,"input":"13\nBB\nAZB\nAZC\nAQ\nAR\nAS\nAT\nAU\nAV\nAW\nAX\nAY\nAZ","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\ACER\\OneDrive\\Desktop\\Code\\FLOC.cpp","group":"local","local":true}

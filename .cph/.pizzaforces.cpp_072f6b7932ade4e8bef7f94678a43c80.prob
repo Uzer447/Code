@@ -1,0 +1,1 @@
+{"name":"Local: pizzaforces","url":"c:\\Users\\ACER\\OneDrive\\Desktop\\Code\\pizzaforces.cpp","tests":[{"id":1664528551185,"input":"6\n12\n15\n300\n1\n10000000000000000\n3","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\ACER\\OneDrive\\Desktop\\Code\\pizzaforces.cpp","group":"local","local":true}

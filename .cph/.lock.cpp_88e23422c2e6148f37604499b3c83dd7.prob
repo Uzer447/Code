@@ -1,0 +1,1 @@
+{"name":"Local: lock","url":"c:\\Users\\ACER\\OneDrive\\Desktop\\Code\\lock.cpp","tests":[{"id":1661104297075,"input":"5\n82195\n64725","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\ACER\\OneDrive\\Desktop\\Code\\lock.cpp","group":"local","local":true}

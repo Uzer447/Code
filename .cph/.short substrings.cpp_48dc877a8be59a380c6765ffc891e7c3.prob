@@ -1,0 +1,1 @@
+{"name":"Local: short substrings","url":"c:\\Users\\ACER\\OneDrive\\Desktop\\Code\\short substrings.cpp","tests":[{"id":1663309894949,"input":"4\nabbaac\nac\nbccddaaffcckka\nzzzzzzzzzz","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\ACER\\OneDrive\\Desktop\\Code\\short substrings.cpp","group":"local","local":true}

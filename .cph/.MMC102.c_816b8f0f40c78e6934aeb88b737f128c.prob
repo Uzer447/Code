@@ -1,0 +1,1 @@
+{"name":"Local: MMC102","url":"c:\\Users\\ACER\\OneDrive\\Desktop\\Code\\MMC102.c","tests":[{"id":1676385391434,"input":"6\n6 90 12 18 30 18","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\ACER\\OneDrive\\Desktop\\Code\\MMC102.c","group":"local","local":true}

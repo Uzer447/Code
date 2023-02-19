@@ -1,0 +1,1 @@
+{"name":"Local: select three sticks","url":"c:\\Users\\ACER\\OneDrive\\Desktop\\Code\\select three sticks.cpp","tests":[{"id":1663935144729,"input":"4\n3\n1 2 3\n4\n7 3 7 3\n5\n3 4 2 1 1\n6\n3 1 4 1 5 6","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\ACER\\OneDrive\\Desktop\\Code\\select three sticks.cpp","group":"local","local":true}

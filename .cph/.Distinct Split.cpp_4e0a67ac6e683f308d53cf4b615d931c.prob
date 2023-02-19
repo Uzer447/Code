@@ -1,0 +1,1 @@
+{"name":"Local: Distinct Split","url":"c:\\Users\\ACER\\OneDrive\\Desktop\\Code\\Distinct Split.cpp","tests":[{"id":1676780907282,"input":"5\n2\naa\n7\nabcabcd\n5\naaaaa\n10\npaiumoment\n4\notkr","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\ACER\\OneDrive\\Desktop\\Code\\Distinct Split.cpp","group":"local","local":true}

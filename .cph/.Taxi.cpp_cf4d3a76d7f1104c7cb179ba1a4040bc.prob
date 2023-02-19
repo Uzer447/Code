@@ -1,0 +1,1 @@
+{"name":"Local: Taxi","url":"c:\\Users\\ACER\\OneDrive\\Desktop\\Code\\Taxi.cpp","tests":[{"id":1675885335461,"input":"<a>\n<b>\n  </b>\n  <d>\n    <c>\n    </c>\n  </d>\n</a>\n","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\ACER\\OneDrive\\Desktop\\Code\\Taxi.cpp","group":"local","local":true}

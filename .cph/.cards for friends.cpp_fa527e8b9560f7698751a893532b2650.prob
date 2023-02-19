@@ -1,0 +1,1 @@
+{"name":"Local: cards for friends","url":"c:\\Users\\ACER\\OneDrive\\Desktop\\Code\\cards for friends.cpp","tests":[{"id":1663559433766,"input":"5\n2 2 3\n3 3 2\n5 10 2\n11 13 1\n1 4 4","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\ACER\\OneDrive\\Desktop\\Code\\cards for friends.cpp","group":"local","local":true}

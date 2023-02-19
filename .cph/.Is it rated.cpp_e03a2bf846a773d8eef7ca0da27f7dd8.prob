@@ -1,0 +1,1 @@
+{"name":"Local: Is it rated","url":"c:\\Users\\ACER\\OneDrive\\Desktop\\Code\\Is it rated.cpp","tests":[{"id":1666534174672,"input":"4\n1500 1500\n1300 1300\n1200 1200\n1400 1400","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\ACER\\OneDrive\\Desktop\\Code\\Is it rated.cpp","group":"local","local":true}

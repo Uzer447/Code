@@ -19,5 +19,6 @@ int main()
     else
         cout << "contest" << endl;
 
+
     return 0;
 }

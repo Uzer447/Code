@@ -21,6 +21,7 @@ int main()
     {
         cout << s << endl;
     }
+    
     else
     {
         if (n / 2 > up)

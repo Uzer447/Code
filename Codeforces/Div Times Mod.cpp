@@ -7,17 +7,16 @@ int main()
 {
     // freopen("input.txt", "r", stdin);
     // freopen("output.txt", "w", stdout);
-    int t;
-    cin >> t;
-    while (t--)
+    int n,k;
+    cin>>n>>k;
+    int x=INT_MAX;
+    for(int i=2;i<k;i++)
     {
-        
+        if(n%i==0)
+        {int temp=i*((n-i)/k);
+        x=min(x,temp);}
     }
+    cout<<x<<endl;
 
     return 0;
-}
-vector<int> v(n);
-for (int i = 0; i < n; i++)
-{
-    cin >> v[i];
 }

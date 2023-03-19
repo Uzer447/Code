@@ -11,13 +11,13 @@ int main()
     cin >> t;
     while (t--)
     {
-        
+        int d,v,l,r;
+        cin>>d>>v>>l>>r;
+        int ans=d/v;
+        int diff=(r/v)-((l-1)/v);
+        int ex=diff;
+        cout<<ans-ex<<endl;
     }
 
     return 0;
-}
-vector<int> v(n);
-for (int i = 0; i < n; i++)
-{
-    cin >> v[i];
 }

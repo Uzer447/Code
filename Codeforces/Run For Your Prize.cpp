@@ -7,9 +7,19 @@ int main()
 {
     // freopen("input.txt", "r", stdin);
     // freopen("output.txt", "w", stdout);
-    ll n;
-    cin>>n;
-    cout<<n/2520<<endl;
-
+    int k = 1e6;
+    int n;
+    cin >> n;
+    vector<int> v(n);
+    for (int i = 0; i < n; i++)
+    {
+        cin >> v[i];
+    }
+    int ans=0;
+    forn(n)
+    {
+        ans=max(ans,min(v[i]-1,k-v[i]));
+    }
+    cout<<ans<<endl;
     return 0;
 }

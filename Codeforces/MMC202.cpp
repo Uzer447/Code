@@ -7,9 +7,18 @@ int main()
 {
     // freopen("input.txt", "r", stdin);
     // freopen("output.txt", "w", stdout);
-    ll n;
-    cin>>n;
-    cout<<n/2520<<endl;
+    int n;
+    cin >> n;
+    vector<int> v(n);
+    for (int i = 0; i < n; i++)
+    {
+        cin >> v[i];
+    }
+    sort(v.begin(), v.end());
+    if(n==1)
+    cout<<"NO"<<endl;
+    else
+    cout<<v[1]<<endl;
 
     return 0;
 }

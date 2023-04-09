@@ -7,9 +7,17 @@ int main()
 {
     // freopen("input.txt", "r", stdin);
     // freopen("output.txt", "w", stdout);
-    ll n;
-    cin>>n;
-    cout<<n/2520<<endl;
+    string x,y;
+    cin>>x>>y;
+
+    if(x==y)
+    {
+        cout<<x<<endl;
+    }
+    else
+    {
+        cout<<"1"<<endl;
+    }
 
     return 0;
 }

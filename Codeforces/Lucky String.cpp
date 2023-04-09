@@ -7,9 +7,21 @@ int main()
 {
     // freopen("input.txt", "r", stdin);
     // freopen("output.txt", "w", stdout);
-    ll n;
+    int N = 1e5;
+    string ex = "abcd";
+    string ans="";
+    N = N / 4;
+    while (N--)
+    {
+        ans = ans + ex;
+    }
+    int n;
     cin>>n;
-    cout<<n/2520<<endl;
+    forn(n)
+    {
+        cout<<ans[i];
+    }
+    cout<<endl;
 
     return 0;
 }

@@ -7,9 +7,10 @@ int main()
 {
     // freopen("input.txt", "r", stdin);
     // freopen("output.txt", "w", stdout);
-    ll n;
+    int n;
     cin>>n;
-    cout<<n/2520<<endl;
-
+    ll ans=1LL<<(n+1);
+    ans-=2;
+    cout<<ans<<endl;
     return 0;
 }

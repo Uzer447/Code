@@ -7,9 +7,10 @@ int main()
 {
     // freopen("input.txt", "r", stdin);
     // freopen("output.txt", "w", stdout);
-    ll n;
-    cin>>n;
-    cout<<n/2520<<endl;
+    int a,b,c;
+    cin>>a>>b>>c;
+    int avg=(a+b+c)/3;
+    cout<<abs(a-avg)+abs(b-avg)+abs(c-avg)<<endl;
 
     return 0;
 }

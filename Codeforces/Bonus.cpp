@@ -11,27 +11,24 @@ int main()
     cin >> t;
     while (t--)
     {
-        int x,y;
-        cin>>x>>y;
-        vector<int> v;
-        for(int i=y;i<=x;i++)
+        int x;
+        cin>>x;
+        int b=0;
+        if(x<100)
         {
-            v.push_back(i);
+            b=0;
         }
-        
-        if(abs(x-y)>1)
+        else if(x>100 && x<1000)
         {
-            for(int i=x-1;i>=y+1;i--)
-            {
-                v.push_back(i);
-            }
+            b=25;
         }
-        cout<<v.size()<<endl;
-        forn(v.size())
+        else if(x>1000 && x<5000)
         {
-            cout<<v[i]<<" ";
+            b=100;
         }
-        cout<<endl;
+        else
+        b=500;
+        cout<<x+b<<endl;
     }
 
     return 0;

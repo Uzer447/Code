@@ -19,7 +19,6 @@ int main()
         v.push_back({a-b, b});
     }
     sort(v.begin(), v.end(), greater<pair<int, int>>());
-    //cout<<sum<<endl;
     int ans = 0;
     forn(n)
     {

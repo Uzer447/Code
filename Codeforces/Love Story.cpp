@@ -11,16 +11,18 @@ int main()
     cin >> t;
     while (t--)
     {
-        ll n, k;
-        cin >> n >> k;
-        if (n % 2 != k % 2)
-            cout << "NO" << endl;
-        else if (k * k > n)
-            cout << "NO" << endl;
-        else
-            cout << "YES" << endl;
+        string s;
+        cin>>s;
+        int n=10;
+        string a="codeforces";
+        int cnt=0;
+        forn(n)
+        {
+            if(s[i]!=a[i])
+            cnt++;
+        }
+        cout<<cnt<<endl;
     }
-
 
     return 0;
 }

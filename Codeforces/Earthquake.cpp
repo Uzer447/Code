@@ -11,27 +11,23 @@ int main()
     cin >> t;
     while (t--)
     {
-        int x,y;
-        cin>>x>>y;
-        vector<int> v;
-        for(int i=y;i<=x;i++)
+        int n, k;
+        cin >> n >> k;
+        vector<int> v(n);
+        for (int i = 0; i < n; i++)
         {
-            v.push_back(i);
+            cin >> v[i];
         }
-        
-        if(abs(x-y)>1)
+        int cnt = 0;
+        for (int i = 1; i < n - 1; i++)
         {
-            for(int i=x-1;i>=y+1;i--)
+            if (abs(v[i] - v[i - 1]) >= k && abs(v[i] - v[i + 1]) >= k)
             {
-                v.push_back(i);
+                cnt++;
+                v[i]=v[i-1];
             }
         }
-        cout<<v.size()<<endl;
-        forn(v.size())
-        {
-            cout<<v[i]<<" ";
-        }
-        cout<<endl;
+        cout << cnt << endl;
     }
 
     return 0;

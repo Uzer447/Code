@@ -11,27 +11,27 @@ int main()
     cin >> t;
     while (t--)
     {
-        int x,y;
-        cin>>x>>y;
-        vector<int> v;
-        for(int i=y;i<=x;i++)
+        int n;
+        cin>>n;
+        vector<int> v(n);
+        for(int i=0;i<n;i++)
         {
-            v.push_back(i);
+        cin>>v[i];
         }
-        
-        if(abs(x-y)>1)
+        unordered_map<int,int> mp;
+        forn(n)
         {
-            for(int i=x-1;i>=y+1;i--)
+            for(int j=i+1;j<n;j++)
             {
-                v.push_back(i);
+                mp[v[i]+v[j]]++;
             }
         }
-        cout<<v.size()<<endl;
-        forn(v.size())
+        int ans=INT_MIN;
+        for(auto i:mp)
         {
-            cout<<v[i]<<" ";
+            ans=max(ans,i.second);
         }
-        cout<<endl;
+        cout<<ans<<endl;
     }
 
     return 0;

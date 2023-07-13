@@ -14,16 +14,23 @@ int main()
         int n;
         cin >> n;
         vector<int> v(n);
-        int cnt = 0;
         int x = INT_MIN;
         for (int i = 0; i < n; i++)
         {
             cin >> v[i];
             x = max(x, v[i]);
         }
-        if (count(v.begin(), v.end(), x)%2==0)
+        int cnt = count(v.begin(), v.end(), x);
+        if (cnt % 2 == 0)
         {
-            cout << "Jake" << endl;
+            if (n % 2 == 0)
+            {
+                cout << "John" << endl;
+            }
+            else
+            {
+                cout << "Jake" << endl;
+            }
         }
         else
             cout << "John" << endl;

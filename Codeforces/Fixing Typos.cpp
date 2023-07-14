@@ -27,55 +27,23 @@ const int MOD = 1e9+7;
 const int SIZE = 1e6+10;
 int main()
 {
-    int n,k;
-    cin>>n>>k;
-    map<int,int> ans;
-    queue<int> q;
-    for(int i=0; i<30; i++)
+    string s;
+    cin>>s;
+    int i=1;
+    while(i<s.size()-1)
     {
-        if(n&(1<<i))
+        if(s[i-1]==s[i] && s[i+1]==s[i])
         {
-            if(i>0)
-            q.push(1<<i);
-            ans[1<<i]++;
+            s.erase(i,1);
+            i--;
         }
+        else if(s[i-1]==s[i] && s[i+1]==s[i+2])
+        {
+            s.erase(i+1,1);
+            i--;
+        }
+        i++;
     }
-
-    if(ans.size()>k)
-    cout<<"NO"<<endl;
-    else
-    {
-        int cnt=ans.size();
-        while(cnt<k && !q.empty())
-        {
-            int z=q.front();
-            q.pop();
-            ans[z]--;
-            ans[z/2]+=2;
-            if(z/2>1)
-            {
-                q.push(z/2);
-                q.push(z/2);
-            }
-            cnt++;
-        }
-        if(cnt<k)
-        {
-            cout<<"NO"<<endl;
-        }
-        else
-        {
-            cout<<"YES"<<endl;
-            for(auto i:ans)
-            {
-                REP(j,i.second)
-                {
-                    cout<<i.first<<" ";
-                }
-            }
-            cout<<endl;
-        }
-    }
-    
+    cout<<s<<endl;
     return 0;
 }

@@ -50,6 +50,5 @@ int main()
             }
         cout<<team<<endl;   
     }
-
     return 0;
 }

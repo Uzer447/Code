@@ -12,19 +12,20 @@ int main()
     cin >> t;
     while (t--)
     {
-        ll n,x,y;
-        cin>>n>>x>>y;
-        vector<ll> v(n);
+        int s;
+        cin>>s;
+        int x=s;
+        int cnt=0;
+        int k=1;
         ll sum=0;
-        for(int i=0;i<n;i++)
+        while(sum<s)
         {
-        cin>>v[i];
-        sum+=v[i];
+            sum+=k;
+            cnt++;
+            k+=2;
         }
-        if((sum+x+y)%2==0)
-        cout<<"Alice"<<endl;
-        else
-        cout<<"Bob"<<endl;
+        cout<<cnt<<endl;
     }
+
     return 0;
 }

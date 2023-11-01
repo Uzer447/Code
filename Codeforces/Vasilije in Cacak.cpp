@@ -12,19 +12,12 @@ int main()
     cin >> t;
     while (t--)
     {
-        ll n,x,y;
-        cin>>n>>x>>y;
-        vector<ll> v(n);
-        ll sum=0;
-        for(int i=0;i<n;i++)
-        {
-        cin>>v[i];
-        sum+=v[i];
-        }
-        if((sum+x+y)%2==0)
-        cout<<"Alice"<<endl;
+        ll n, x, k;
+        cin >> n >> k >> x;
+        if(2*x>=k*(k+1) && 2*x<=n*(n+1)-(n-k)*(n-k+1))
+        cout<<"YES"<<endl;
         else
-        cout<<"Bob"<<endl;
+        cout<<"NO"<<endl;
     }
     return 0;
 }

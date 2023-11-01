@@ -8,23 +8,25 @@ int main()
 {
     // freopen("input.txt", "r", stdin);
     // freopen("output.txt", "w", stdout);
-    int t;
-    cin >> t;
-    while (t--)
+    int n;
+    cin >> n;
+    string ans;
+    int sum = 0;
+    forn(n)
     {
-        ll n,x,y;
-        cin>>n>>x>>y;
-        vector<ll> v(n);
-        ll sum=0;
-        for(int i=0;i<n;i++)
+        int x, y;
+        cin >> x >> y;
+        if (sum + x <= 500)
         {
-        cin>>v[i];
-        sum+=v[i];
+            cout << "A";
+            sum += x;
         }
-        if((sum+x+y)%2==0)
-        cout<<"Alice"<<endl;
         else
-        cout<<"Bob"<<endl;
+        {
+            cout << "G";
+            sum -= y;
+        }
     }
+    cout << endl;
     return 0;
 }

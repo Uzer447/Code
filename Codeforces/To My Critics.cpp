@@ -3,6 +3,7 @@
 #define endl "\n"
 #define ll long long
 #define pb push_back
+#define pii pair<int,int>
 using namespace std;
 int main()
 {
@@ -12,19 +13,16 @@ int main()
     cin >> t;
     while (t--)
     {
-        ll n,x,y;
-        cin>>n>>x>>y;
-        vector<ll> v(n);
-        ll sum=0;
-        for(int i=0;i<n;i++)
+        int a,b,c;
+        cin>>a>>b>>c;
+        if(a+b>=10 || b+c>=10 || c+a>=10)
         {
-        cin>>v[i];
-        sum+=v[i];
+            cout<<"YES"<<endl;
+
         }
-        if((sum+x+y)%2==0)
-        cout<<"Alice"<<endl;
         else
-        cout<<"Bob"<<endl;
+        cout<<"NO"<<endl;
     }
+
     return 0;
 }

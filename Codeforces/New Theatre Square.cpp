@@ -19,6 +19,7 @@ int main()
                 v[i][j]=a;
             }
         }
+        
         ll ans=0;
         for(int i=0;i<n;i++)
         {

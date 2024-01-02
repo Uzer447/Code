@@ -19,25 +19,10 @@ int main()
     {
         int n;
         cin >> n;
-        vi v(n);
-        rep(i, n)
-                cin >>
-            v[i];
-        vi ans;
-        ans.push_back(v[0]);
-        for (int i = 1; i < n; i++)
-        {
-            if (v[i] < v[i - 1])
-            {
-                ans.pb(1);
-            }
-            ans.pb(v[i]);
-        }
-        cout<<ans.size()<<endl;
-        for (auto it : ans)
-            cout << it << " ";
-        cout << endl;
+        if (n % 3 == 0)
+            cout << "Second" << endl;
+        else
+            cout << "First" << endl;
     }
-
     return 0;
 }

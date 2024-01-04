@@ -9,12 +9,12 @@ int main()
     {
         ll a,b,c;
         cin>>a>>b>>c;
-        ll diffab=b-a;
-        ll diffbc=c-a;
-        if((abs(diffab-diffbc)+a)%a==0)
-        cout<<"YES"<<endl;
-        else 
+        ll x=a+c;
+        x/=2;
+        if((a+c)%2==1 || x%b!=0)
         cout<<"NO"<<endl;
+        else 
+        cout<<"YES"<<endl;
     }
     return 0;
 }

@@ -27,6 +27,7 @@ int main()
             temp /= 10;
         }
     }
+    
     cout << ans << endl;
     return 0;
 }

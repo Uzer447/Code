@@ -5,6 +5,7 @@ int main()
 {
     ll a,b,s;
     cin>>a>>b>>s;
+    
     ll x=abs(0-a);
     ll y=abs(0-b);
     ll dist=x+y;

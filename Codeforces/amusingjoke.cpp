@@ -2,6 +2,8 @@
 using namespace std;
 int main()
 {
+    
+    
     string s1,s2,a;
     cin>>s1>>s2>>a;
     string b=s1+s2;

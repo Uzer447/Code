@@ -2,6 +2,7 @@
 using namespace std;
 int main()
 {
+    
     int k,r;
     cin>>k>>r;
     int i=1;

@@ -10,8 +10,6 @@ const int MOD = 1e9 + 7;
 const int SIZE = 1e6 + 10;
 int main()
 {
-    // freopen("input.txt", "r", stdin);
-    // freopen("output.txt", "w", stdout);
     int n;
     cin >> n;
     int even = 0;

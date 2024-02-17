@@ -5,8 +5,6 @@
 using namespace std;
 int main()
 {
-    // freopen("input.txt", "r", stdin);
-    // freopen("output.txt", "w", stdout);
     vector<vector<char>> v(4, vector<char>(4, ' '));
     forn(4)
     {

@@ -4,7 +4,7 @@ int main()
 {
     int n, m;
     cin >> n >> m;
-    bool lefttoright = true;
+    bool lfttoright = true;
     while (n >= 1)
     {
         if (n % 2 != 0)
@@ -14,18 +14,17 @@ int main()
                 cout << "#";
             }
             cout << endl;
-          
         }
         else
         {
-            if (lefttoright)
+            if (lfttoright)
             {
                 for (int i = 1; i < m; i++)
                 {
                     cout << ".";
                 }
                 cout << "#" << endl;
-                lefttoright = false;
+                lfttoright = false;
             }
             else
             {
@@ -35,7 +34,7 @@ int main()
                     cout << ".";
                 }
                 cout << endl;
-                lefttoright=true;
+                lfttoright = true;
             }
         }
         n--;

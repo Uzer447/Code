@@ -14,5 +14,6 @@ int main()
     }
     ans=sum/n;
     cout<<ans<<endl;
+    
     return 0;
 }

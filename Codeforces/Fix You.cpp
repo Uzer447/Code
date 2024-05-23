@@ -17,43 +17,28 @@ int main()
     cin >> t;
     while (t--)
     {
-        string s;
-        cin>>s;
-        int n=s.size();
-        int front=-1;
-        int back=-1;
+        int n,m;
+        cin>>n>>m;
+        vector<vector<char>> v(n,vector<char>(m,' '));
         rep(i,n)
         {
-            if(s[i]=='1')
+            rep(j,m)
             {
-                front=i;
-                break;
-            }
-        }
-        for(int i=n-1;i>=0;i--)
-        {
-            if(s[i]=='1')
-            {
-                back=i;
-                break;
+                char c;
+                cin>>c;
+                v[i][j]=c;
             }
         }
         int cnt=0;
-        if(front==-1)
-        cout<<0<<endl;
-        else if(back==-1)
+        rep(i,n-1)
         {
-            cout<<n-front<<endl;
+            if(v[i][m-1]=='R')cnt++;
         }
-        else
+        rep(j,m-1)
         {
-        for(int i=front+1;i<=back-1;i++)
-        {
-            if(s[i]=='0')
-            cnt++;
+            if(v[n-1][j]=='D')cnt++;
         }
         cout<<cnt<<endl;
-        }
     }
 
     return 0;

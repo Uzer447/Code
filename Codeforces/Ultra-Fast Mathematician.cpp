@@ -7,29 +7,26 @@
 #define vall(X) (X).begin(), (X).end()
 #define vi vector<int>
 using namespace std;
-const int MOD = 1e9 + 7;
-const int SIZE = 1e6 + 10;
 int main()
 {
     // freopen("input.txt", "r", stdin);
     // freopen("output.txt", "w", stdout);
     string s;
     cin >> s;
-    if (s.size() == 1 && s[0] == '9')
+    string t;
+    cin >> t;
+    int n = s.size();
+    rep(i, n)
     {
-        cout << 9 << endl;
-    }
-    else
-    {
-        rep(i,s.size())
+        if (s[i] != t[i])
         {
-            if(i==0 && s[i]=='9')
-            continue;
-            int x=s[i]-'0';
-            if(x>=5)
-            s[i]=char(9-x);
+            cout << 1;
         }
-        cout<<s<<endl;
+        else
+        {
+            cout << 0;
+        }
     }
+    cout << endl;
     return 0;
 }

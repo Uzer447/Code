@@ -27,7 +27,7 @@ int main()
             continue;
             int x=s[i]-'0';
             if(x>=5)
-            s[i]=char(9-x);
+            s[i]=(char)(9-x+48);
         }
         cout<<s<<endl;
     }

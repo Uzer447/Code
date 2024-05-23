@@ -1,52 +1,54 @@
 #include <bits/stdc++.h>
-#define ll long long 
+#define ll long long
 using namespace std;
 int main()
 {
     int n;
-    cin>>n;
-    int k=n;
-    bool dir=true;
-    for(int i=0;i<2*n;i++)
+    cin >> n;
+    int a = n;
+    int k = n;
+    n = 0;
+    for (int j = 0; j <= a; j++)
     {
-        for(int j=0;j<=2*i;j++)
+        for (int i = 1; i < 2 * k; i++)
         {
-            if(i!=0)
-            cout<<j%i<<" ";
+            cout << " ";
         }
-        cout<<endl;
+        for (int i = 0; i <= n; i++)
+        {
+            if(k==0 && i==0)
+            cout<<i;
+            else
+            cout  << " "<<i;
+        }
+        for (int i = n - 1; i >= 0; i--)
+        {
+            cout  << " " << i;
+        }
+        cout << endl;
+        n++;
+        k--;
     }
-
-    // for(int i=0; i<2*n; i++)
-    // {
-    //     if(i==n)
-    //     {
-    //         dir=false;
-    //     }
-    //     if(dir)
-    //     {
-    //         for(int x=1;x<=k;x++)
-    //     {
-    //         cout<<" ";
-    //     }
-    //     k--;
-    //     }
-    //     else
-    //     {
-    //         for(int x=k;x>=k;x--)
-    //         cout<<" ";
-    //         k--;
-    //     }
-    //     for(int y=0;y<=i;y++)
-    //     {
-    //         cout<<y<<" ";
-    //     }
-    //     for(int z=i;z>=0;z--)
-    //     {
-    //         cout<<z<<" ";
-    //     }
-    //     cout<<endl;
-    // }
-    
+    // cout<<n<<" "<<k<<endl;
+    n = a - 1;
+    k = 1;
+    for (int j = 0; j < a; j++)
+    {
+        for (int i = 0; i < 2 * k-1; i++)
+        {
+            cout << " ";
+        }
+        for (int i = 0; i <= n; i++)
+        {
+            cout  << " "<<i;
+        }
+        for (int i = n - 1; i >= 0; i--)
+        {
+            cout  << " "<<i;
+        }
+        cout << endl;
+        n--;
+        k++;
+    }
     return 0;
 }

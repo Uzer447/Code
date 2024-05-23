@@ -13,23 +13,29 @@ int main()
 {
     // freopen("input.txt", "r", stdin);
     // freopen("output.txt", "w", stdout);
-    string s;
-    cin >> s;
-    if (s.size() == 1 && s[0] == '9')
+    int t;
+    cin >> t;
+    while (t--)
     {
-        cout << 9 << endl;
-    }
-    else
-    {
-        rep(i,s.size())
+        ll n, m;
+        cin >> n >> m;
+        if (n == 1)
         {
-            if(i==0 && s[i]=='9')
-            continue;
-            int x=s[i]-'0';
-            if(x>=5)
-            s[i]=char(9-x);
+            cout << 0 << endl;
         }
-        cout<<s<<endl;
+        else if (n == 2)
+        {
+            cout << m << endl;
+        }
+        else if(n>m)
+        {
+            cout<<2*m<<endl;
+        }
+        else
+        {
+            cout<<m*2<<endl;
+        }
     }
+
     return 0;
 }

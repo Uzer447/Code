@@ -13,23 +13,32 @@ int main()
 {
     // freopen("input.txt", "r", stdin);
     // freopen("output.txt", "w", stdout);
-    string s;
-    cin >> s;
-    if (s.size() == 1 && s[0] == '9')
+    int n, k;
+    cin >> n >> k;
+    vector<pii> v;
+    rep(i, n)
     {
-        cout << 9 << endl;
+        int a,b;
+        cin>>a;
+        b=i+1;
+        v.pb({a,b});
     }
-    else
+    int cnt = 0;
+    sort(vall(v));
+    int sum = v[0].first;
+    int i = 1;
+    while (sum <= k)
     {
-        rep(i,s.size())
-        {
-            if(i==0 && s[i]=='9')
-            continue;
-            int x=s[i]-'0';
-            if(x>=5)
-            s[i]=char(9-x);
-        }
-        cout<<s<<endl;
+        sum += v[i].first;
+        cnt++;
+        i++;
     }
+    cnt=min(cnt,n);
+    cout << cnt << endl;
+    rep(i,cnt)
+    {
+        cout<<v[i].second << " ";
+    }
+    cout<<endl;
     return 0;
 }

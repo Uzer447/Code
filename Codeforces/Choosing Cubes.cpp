@@ -37,7 +37,6 @@ int main()
         sort(vall(v),greater<pii>());
         int remove=0;
         int notremove=0;
-        //cout<<v[2].first<<endl;
         for(int i=0;i<k;i++)
         {
             if(v[i].second==1)
@@ -50,7 +49,6 @@ int main()
             if(v[i].second==1)
             notremove++;
         }
-        //cout<<remove<<" "<<notremove<<endl;
         if(remove>0 && notremove>0)
         {
             cout<<"MAYBE"<<endl;

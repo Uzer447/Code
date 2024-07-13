@@ -17,15 +17,11 @@ int main()
         int cnt=0;
         while(n--)
         {
-            int temp=absorption(x);
-            cout<<x<<endl;
-            if(x<=0 || temp>=prev)
+            if(x<=20)
             break;
-            x=temp;
-            prev=x;
-            
+            x=absorption(x);
         }
-        cout<<x<<endl;
+        //cout<<x<<endl;
         if(x>0)
         {
             x=x-m*10;

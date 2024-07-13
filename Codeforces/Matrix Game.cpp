@@ -1,19 +1,30 @@
 #include <bits/stdc++.h>
-#define forn(n) for (int i = 0; i < n; i++)
+#define rep(I, N) for (int I = 0; I < (N); ++I)
 #define endl "\n"
 #define ll long long
+#define pb push_back
+#define pii pair<int,int>
+#define vall(X) (X).begin(), (X).end()
+#define vi vector<int>
 using namespace std;
-bool canclaim(vector<vector<int>> &v, int n, int m, int i, int j)
+const int MOD = 1e9+7;
+const int SIZE = 1e6+10;
+int n,m;
+bool canclaimrow(vector<vector<int>> &v,int i)
 {
-    int dx[] = {0, 0, 1, -1};
-    int dy[] = {1, -1, 0, 0};
-    for (int k = 0; k < 4; k++)
+    for(int j=0;j<m;j++)
     {
-        int x = i + dx[k];
-        int y = j + dy[k];
-        // cout<<x<<" "<<y<<endl;
-        if (x >= 0 && y >= 0 && x < n && y < m && v[x][y] == 1)
-            return false;
+        if(v[i][j]==1)
+        return false;
+    }
+    return true;
+}
+bool canclaimcol(vector<vector<int>> &v,int j)
+{
+    for(int i=0;i<n;i++)
+    {
+        if(v[i][j]==1)
+        return false;
     }
     return true;
 }
@@ -25,35 +36,36 @@ int main()
     cin >> t;
     while (t--)
     {
-        int n, m;
-        cin >> n >> m;
-        vector<vector<int>> v(n, vector<int>(m, 0));
-        forn(n)
+        cin>>n>>m;
+        vector<vector<int>> v(n,vector<int>(m,0));
+        rep(i,n)
         {
-            for (int j = 0; j < m; j++)
+            rep(j,m)
             {
                 int a;
-                cin >> a;
+                cin>>a;
                 v[i][j] = a;
             }
         }
-        int ans = 0;
-        forn(n)
+        int row=0;
+        int col=0;
+        for(int i=0;i<n;i++)
         {
-            for (int j = 0; j < m; j++)
-            {
-                if (v[i][j] == 0 && canclaim(v, n, m, i, j))
-                {
-                    ans++;
-                    v[i][j] = 1;
-                }
-            }
+            row+=canclaimrow(v,i);
         }
-        if (ans % 2 == 0)
-            cout << "Vivek" << endl;
+        for(int j=0;j<m;j++)
+        {
+            col+=canclaimcol(v,j);
+        }
+        //cout<<row<<" "<<col<<endl;
+        if(min(row,col)%2==1)
+        {
+            cout<<"Ashish"<<endl;
+        }
         else
-            cout << "Ashish" << endl;
-        // cout<<ans<<endl;
+        {
+            cout<<"Vivek"<<endl;
+        }
     }
 
     return 0;

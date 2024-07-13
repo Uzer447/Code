@@ -15,23 +15,16 @@ int main()
         cin >> a >> b >> c >> d;
         ll x, y, x1, y1, x2, y2;
         cin >> x >> y >> x1 >> y1 >> x2 >> y2;
-        ll maxrangelr = abs(x2 - x1);
-        ll maxrangeud = abs(y2 - y1);
-        if (x2 * x1 < 0)
+        int xx = x;
+        int yy = y;
+        x += -a + b, y += -c + d;
+        if (x >= x1 && x <= x2 && y >= y1 && y <= y2 && (x2 > x1 || a + b == 0) && (y2 > y1 || c + d == 0))
         {
-            maxrangelr++;
-        }
-        if (y2 * y1 < 0)
-        {
-            maxrangeud++;
-        }
-        if (a <= maxrangelr && b <= maxrangelr && c <= maxrangeud && d <= maxrangeud)
-        {
-            cout << "YES" << endl;
+            cout << "Yes\n";
         }
         else
         {
-            cout << "NO" << endl;
+            cout << "No\n";
         }
     }
 

@@ -3,21 +3,16 @@
 #define endl "\n"
 #define ll long long
 #define pb push_back
-#define pii pair<int, int>
+#define pii pair<int,int>
 #define vall(X) (X).begin(), (X).end()
 #define vi vector<int>
+#define vll vector<long long>
+#define yes cout<<"YES\n";
+#define no cout<<"NO\n";
+#define print(X) cout<<X<<endl;
 using namespace std;
-const int MOD = 1e9 + 7;
-const int SIZE = 1e6 + 10;
-int K;
-bool cmp(int a,int b)
-{
-    if(a%K<b%K)
-    return true;
-    else if(a%K==b%K)
-    return a<b;
-    return false;
-}
+const int MOD = 1e9+7;
+const int SIZE = 1e6+10;
 int main()
 {
     // freopen("input.txt", "r", stdin);
@@ -26,44 +21,32 @@ int main()
     cin >> t;
     while (t--)
     {
-        ll n, k;
-        cin >> n >> k;
-        K=k;
-        ll cnt=0;
-        vector<ll> v(n);
-        rep(i, n)
+        int n,m,k;
+        cin>>n>>m>>k;
+        string s;
+        cin>>s;
+        vector<int> dp(n+2,0);
+        dp[0]=1;
+        if(s[0]=='C')
+        dp[0]=1e9;
+        for(int i=1;i<n;i++)
         {
-            cin>>v[i];
-        }
-        //sort(vall(v));
-        unordered_map<ll,ll> mp;
-        for(auto &it:v)
-        {
-            mp[it%k]++;
-        }
-        for(auto &it:mp)
-        {
-            if(it.second%2==1)
+            if(s[i]=='C')
+            dp[i]=1e9;
+            else if(s[i]=='W')
             {
-                cnt++;
+                dp[i]=dp[i-1]+1;
+            }
+            else
+            {
+                for(int j=1;j<=m;j++)
+                {
+                    if(i-j>=0)
+                    dp[i]=min(dp[i],dp[i-j]);
+                }
             }
         }
-        if(cnt>1)
-        cout<<-1<<endl;
-        else
-        {
-            ll ans=0;
-            sort(vall(v),cmp);
-            for(auto &it:v)
-            cout<<it<<" ";
-            cout<<endl;
-            for(int i=0;i<n-1;i+=2)
-            {
-                ll diff=abs(v[i+1]-v[i]);
-                ans+=diff/k;
-            }
-            cout<<ans<<endl;
-        }
+        cout<<dp[n]<<endl;
     }
 
     return 0;

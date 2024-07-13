@@ -59,7 +59,12 @@
   "files.associations": {
     "iostream": "cpp",
     "tuple": "cpp",
-    "chrono": "cpp"
+    "chrono": "cpp",
+    "cstdlib": "cpp",
+    "*.tcc": "cpp",
+    "ostream": "cpp",
+    "regex": "cpp",
+    "random": "cpp"
   },
   "C_Cpp.errorSquiggles": "disabled"
 }

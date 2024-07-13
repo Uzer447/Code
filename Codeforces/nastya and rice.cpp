@@ -11,21 +11,16 @@ int main()
         cin>>n;
         ll a,b,c,d;
         cin>>a>>b>>c>>d;
-        ll low=n*(a-b);
-        ll high=n*(a+b);
-        if(low>=(c-d))
-        {
-            cout<<"Yes"<<endl;
-        }   
-        else if(high<=(c+d))
+        ll x=n*(a-b);
+        ll y=n*(a+b);
+        if(y>=c-d && x<=c+d)
         {
             cout<<"Yes"<<endl;
         }
         else
         {
             cout<<"No"<<endl;
-        } 
-    
+        }
     }
 
     return 0;

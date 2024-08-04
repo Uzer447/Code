@@ -17,44 +17,25 @@ int main()
 {
     // freopen("input.txt", "r", stdin);
     // freopen("output.txt", "w", stdout);
-    int t;
-    cin >> t;
+    int t=1;
     while (t--)
     {
-        int n;
-        cin>>n;
+        int n,q,k;
+        cin>>n>>q>>k;
         vi v(n);
-        int cnt1=0;
-        int cnt2=0;
-        int sum=0;
         rep(i,n)
         {
             cin>>v[i];
-            sum+=v[i];
-            if(v[i]==1)
-            cnt1++;
-            else
-            cnt2++;
         }
-        if(sum%2==1)
+        while(q--)
         {
-            no
-            continue;
+            int l,r;
+            cin>>l>>r;
+            l--;
+            r--;
+            int ans=(v[l]-1)+(k-v[r])+2*((v[r]-v[l]+1)-(r-l+1));
+            cout<<ans<<endl;
         }
-        sum/=2;
-        if(sum%2==0)
-        {
-            yes
-        }
-        else if(sum%2==1 && cnt1!=0)
-        {
-            yes
-        }
-        else
-        {
-            no
-        }
-        
     }
 
     return 0;

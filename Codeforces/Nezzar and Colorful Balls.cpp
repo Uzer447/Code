@@ -24,37 +24,18 @@ int main()
         int n;
         cin>>n;
         vi v(n);
-        int cnt1=0;
-        int cnt2=0;
-        int sum=0;
+        unordered_map<int,int> freq;
         rep(i,n)
         {
             cin>>v[i];
-            sum+=v[i];
-            if(v[i]==1)
-            cnt1++;
-            else
-            cnt2++;
+            freq[v[i]]++;
         }
-        if(sum%2==1)
+        int ans=0;
+        for(auto it:freq)
         {
-            no
-            continue;
+            ans=max(ans,it.second);
         }
-        sum/=2;
-        if(sum%2==0)
-        {
-            yes
-        }
-        else if(sum%2==1 && cnt1!=0)
-        {
-            yes
-        }
-        else
-        {
-            no
-        }
-        
+        cout<<ans<<endl;
     }
 
     return 0;

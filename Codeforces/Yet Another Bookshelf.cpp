@@ -24,37 +24,33 @@ int main()
         int n;
         cin>>n;
         vi v(n);
-        int cnt1=0;
-        int cnt2=0;
-        int sum=0;
+        int ind=-1;
         rep(i,n)
         {
             cin>>v[i];
-            sum+=v[i];
-            if(v[i]==1)
-            cnt1++;
-            else
-            cnt2++;
+            if(ind==-1 && v[i]==1)
+            ind=i;
         }
-        if(sum%2==1)
+        if(ind==-1)
         {
-            no
+            cout<<0<<endl;
             continue;
         }
-        sum/=2;
-        if(sum%2==0)
+        int ans=0;
+        int curr=0;
+        for(int i=ind;i<n;i++)
         {
-            yes
+            if(v[i]==1)
+            {
+                ans+=curr;
+                curr=0;
+            }
+            else
+            {
+                curr++;
+            }
         }
-        else if(sum%2==1 && cnt1!=0)
-        {
-            yes
-        }
-        else
-        {
-            no
-        }
-        
+        cout<<ans<<endl;
     }
 
     return 0;

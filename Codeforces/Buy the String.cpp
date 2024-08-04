@@ -21,40 +21,23 @@ int main()
     cin >> t;
     while (t--)
     {
-        int n;
-        cin>>n;
-        vi v(n);
-        int cnt1=0;
-        int cnt2=0;
-        int sum=0;
+        int n,c0,c1,h;
+        cin>>n>>c0>>c1>>h;
+        string s;
+        cin>>s;
+        int ans=0;
         rep(i,n)
         {
-            cin>>v[i];
-            sum+=v[i];
-            if(v[i]==1)
-            cnt1++;
+            if(s[i]=='1')
+            {
+                ans+=min(c1,c0+h);
+            }
             else
-            cnt2++;
+            {
+                ans+=min(c0,c1+h);
+            }
         }
-        if(sum%2==1)
-        {
-            no
-            continue;
-        }
-        sum/=2;
-        if(sum%2==0)
-        {
-            yes
-        }
-        else if(sum%2==1 && cnt1!=0)
-        {
-            yes
-        }
-        else
-        {
-            no
-        }
-        
+        cout<<ans<<endl;
     }
 
     return 0;

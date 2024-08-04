@@ -21,40 +21,31 @@ int main()
     cin >> t;
     while (t--)
     {
-        int n;
-        cin>>n;
-        vi v(n);
-        int cnt1=0;
-        int cnt2=0;
-        int sum=0;
-        rep(i,n)
+        int q,d;
+        cin>>q>>d;
+        vi dp(207,0);
+        dp[0]=1;
+        if(!d)
+        d+=10;
+        int mx=d*10;
+        for(int i=0;10*i+d<=mx;i++)
         {
-            cin>>v[i];
-            sum+=v[i];
-            if(v[i]==1)
-            cnt1++;
+            for(int j=0;10*i+d+j<=mx;j++)
+            {
+                dp[10*i+d+j]|=dp[j];
+            }
+        }
+        while(q--)
+        {
+            int u;
+            cin>>u;
+            if(u>=mx || dp[u]==1)
+            {
+                yes
+            }
             else
-            cnt2++;
-        }
-        if(sum%2==1)
-        {
-            no
-            continue;
-        }
-        sum/=2;
-        if(sum%2==0)
-        {
-            yes
-        }
-        else if(sum%2==1 && cnt1!=0)
-        {
-            yes
-        }
-        else
-        {
             no
         }
-        
     }
 
     return 0;

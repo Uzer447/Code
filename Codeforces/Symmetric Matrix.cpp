@@ -13,6 +13,14 @@
 using namespace std;
 const int MOD = 1e9+7;
 const int SIZE = 1e6+10;
+bool isSymmetric(vector<vector<int>> &mat, int N)
+{
+    for (int i = 0; i < N; i++)
+        for (int j = 0; j < N; j++)
+            if (mat[i][j] != mat[j][i])
+                return false;
+    return true;
+}
 int main()
 {
     // freopen("input.txt", "r", stdin);
@@ -21,40 +29,34 @@ int main()
     cin >> t;
     while (t--)
     {
-        int n;
-        cin>>n;
-        vi v(n);
-        int cnt1=0;
-        int cnt2=0;
-        int sum=0;
+        int n,m;
+        cin>>n>>m;
+        int flag=1;
+        if((m*m)%4!=0)
+        {
+            flag=0;
+        }
+        bool sym=false;
         rep(i,n)
         {
-            cin>>v[i];
-            sum+=v[i];
-            if(v[i]==1)
-            cnt1++;
-            else
-            cnt2++;
+            vector<vector<int>> mat(2,vector<int>(2));
+            rep(i,2)
+            {
+                rep(j,2)
+                {
+                    cin>>mat[i][j];
+                }
+            }
+            sym=sym|isSymmetric(mat,2);
         }
-        if(sum%2==1)
+        if(flag && sym)
         {
-            no
-            continue;
-        }
-        sum/=2;
-        if(sum%2==0)
-        {
-            yes
-        }
-        else if(sum%2==1 && cnt1!=0)
-        {
-            yes
+            yes;
         }
         else
         {
-            no
+            no;
         }
-        
     }
 
     return 0;

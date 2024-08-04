@@ -21,40 +21,17 @@ int main()
     cin >> t;
     while (t--)
     {
-        int n;
-        cin>>n;
-        vi v(n);
-        int cnt1=0;
-        int cnt2=0;
-        int sum=0;
-        rep(i,n)
+        ll p,a,b,c;
+        cin>>p>>a>>b>>c;
+        ll x=a-(p%a);
+        ll y=b-(p%b);
+        ll z=c-(p%c);
+        if(z==c || y==b || x==a)
         {
-            cin>>v[i];
-            sum+=v[i];
-            if(v[i]==1)
-            cnt1++;
-            else
-            cnt2++;
-        }
-        if(sum%2==1)
-        {
-            no
+            cout<<0<<endl;
             continue;
         }
-        sum/=2;
-        if(sum%2==0)
-        {
-            yes
-        }
-        else if(sum%2==1 && cnt1!=0)
-        {
-            yes
-        }
-        else
-        {
-            no
-        }
-        
+        cout<<min(x,min(y,z))<<endl;
     }
 
     return 0;

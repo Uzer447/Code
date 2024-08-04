@@ -21,40 +21,38 @@ int main()
     cin >> t;
     while (t--)
     {
-        int n;
-        cin>>n;
-        vi v(n);
-        int cnt1=0;
-        int cnt2=0;
-        int sum=0;
+        ll n,k;
+        cin>>n>>k;
+        vector<ll> v;
         rep(i,n)
         {
-            cin>>v[i];
-            sum+=v[i];
-            if(v[i]==1)
-            cnt1++;
+            int x;
+            cin>>x;
+            v.pb(x);
+        }
+        vi ans(n);
+        int flag=0;
+        for(int i=0;i<n;i++)
+        {
+            if(k%2==0 && v[i]==k/2)
+            {
+                ans[i]=flag;
+                flag=1-flag;
+            }
+            else if(2*v[i]<k)
+            {
+                ans[i]=0;
+            }
             else
-            cnt2++;
+            {
+                ans[i]=1;
+            }
         }
-        if(sum%2==1)
+        for(auto it:ans)
         {
-            no
-            continue;
+            cout<<it<<" ";
         }
-        sum/=2;
-        if(sum%2==0)
-        {
-            yes
-        }
-        else if(sum%2==1 && cnt1!=0)
-        {
-            yes
-        }
-        else
-        {
-            no
-        }
-        
+        cout<<endl;
     }
 
     return 0;

@@ -23,38 +23,35 @@ int main()
     {
         int n;
         cin>>n;
-        vi v(n);
-        int cnt1=0;
-        int cnt2=0;
-        int sum=0;
+        vll v(n);
+        long long mx=-1e9;
         rep(i,n)
         {
             cin>>v[i];
-            sum+=v[i];
-            if(v[i]==1)
-            cnt1++;
-            else
-            cnt2++;
+            mx=max(mx,v[i]);
         }
-        if(sum%2==1)
+        sort(vall(v),[](long long x,long long y){return abs(x)>abs(y);});
+        if(mx<0)
         {
-            no
-            continue;
-        }
-        sum/=2;
-        if(sum%2==0)
-        {
-            yes
-        }
-        else if(sum%2==1 && cnt1!=0)
-        {
-            yes
+            cout<<v[n-5]*v[n-1]*v[n-2]*v[n-3]*v[n-4]<<endl;
         }
         else
         {
-            no
+            ll ans=v[0]*v[1]*v[2]*v[3]*v[4];
+            for(int i=5;i<n;i++)
+            {
+                for(int j=0;j<5;j++)
+                {
+                    ll temp=v[i];
+                    for(int k=0;k<5;k++)
+                    {
+                        if(k!=j)temp*=v[k];
+                    }
+                    ans=max(ans,temp);
+                }
+            }
+            cout<<ans<<endl;
         }
-        
     }
 
     return 0;

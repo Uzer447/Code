@@ -24,37 +24,21 @@ int main()
         int n;
         cin>>n;
         vi v(n);
-        int cnt1=0;
-        int cnt2=0;
-        int sum=0;
         rep(i,n)
+        cin>>v[i];
+        vll score(n,0);
+        for(int i=n-1;i>=0;i--)
         {
-            cin>>v[i];
-            sum+=v[i];
-            if(v[i]==1)
-            cnt1++;
-            else
-            cnt2++;
+            score[i]=v[i];
+            if(i+v[i]<n)
+            {
+                score[i]+=score[i+v[i]];
+            }
         }
-        if(sum%2==1)
-        {
-            no
-            continue;
-        }
-        sum/=2;
-        if(sum%2==0)
-        {
-            yes
-        }
-        else if(sum%2==1 && cnt1!=0)
-        {
-            yes
-        }
-        else
-        {
-            no
-        }
-        
+        ll ans=0;
+        for(auto it:score)
+        ans=max(ans,it);
+        cout<<ans<<endl;
     }
 
     return 0;

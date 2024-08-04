@@ -24,37 +24,24 @@ int main()
         int n;
         cin>>n;
         vi v(n);
-        int cnt1=0;
-        int cnt2=0;
-        int sum=0;
         rep(i,n)
         {
             cin>>v[i];
-            sum+=v[i];
-            if(v[i]==1)
-            cnt1++;
-            else
-            cnt2++;
         }
-        if(sum%2==1)
+        ll x=0;
+        for(int i=1;i<n;i++)
         {
-            no
-            continue;
+            x+=abs(v[i]-v[i-1]);
         }
-        sum/=2;
-        if(sum%2==0)
+        ll y=abs(v[1]-v[0]);
+        for(int i=1;i<n-1;i++)
         {
-            yes
+            ll k=(abs(v[i]-v[i-1])+abs(v[i]-v[i+1])-abs(v[i-1]-v[i+1]));
+            y=max(y,k);
         }
-        else if(sum%2==1 && cnt1!=0)
-        {
-            yes
-        }
-        else
-        {
-            no
-        }
-        
+        ll k=(abs(v[n-1]-v[n-2]));
+        y=max(y,k);
+        cout<<x-y<<endl;
     }
 
     return 0;

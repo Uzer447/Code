@@ -7,8 +7,8 @@
 #define vall(X) (X).begin(), (X).end()
 #define vi vector<int>
 #define vll vector<long long>
-#define yes cout<<"YES\n";
-#define no cout<<"NO\n";
+#define yes cout<<"YES\n"
+#define no cout<<"NO\n"
 #define print(X) cout<<X<<endl;
 using namespace std;
 const int MOD = 1e9+7;
@@ -24,37 +24,26 @@ int main()
         int n;
         cin>>n;
         vi v(n);
-        int cnt1=0;
-        int cnt2=0;
-        int sum=0;
+        unordered_map<int,int> mp;
         rep(i,n)
         {
             cin>>v[i];
-            sum+=v[i];
-            if(v[i]==1)
-            cnt1++;
-            else
-            cnt2++;
+            mp[v[i]]++;
         }
-        if(sum%2==1)
+        int flag=1;
+        for(auto it:mp)
         {
-            no
-            continue;
+            if(it.second>1)
+            {
+                flag=0;
+                break;
+            }
         }
-        sum/=2;
-        if(sum%2==0)
-        {
-            yes
-        }
-        else if(sum%2==1 && cnt1!=0)
-        {
-            yes
-        }
+        if(flag)
+        no;
         else
-        {
-            no
-        }
-        
+        yes;
+
     }
 
     return 0;

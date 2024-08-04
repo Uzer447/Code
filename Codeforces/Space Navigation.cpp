@@ -21,40 +21,42 @@ int main()
     cin >> t;
     while (t--)
     {
-        int n;
-        cin>>n;
-        vi v(n);
-        int cnt1=0;
-        int cnt2=0;
-        int sum=0;
-        rep(i,n)
+        int px,py;
+        cin>>px>>py;
+        string s;
+        cin>>s;
+        int u=0,r=0,d=0,l=0;
+        for(auto it:s)
         {
-            cin>>v[i];
-            sum+=v[i];
-            if(v[i]==1)
-            cnt1++;
+            if(it=='L')
+            l++;
+            else if(it=='U')
+            u++;
+            else if(it=='D')
+            d++;
             else
-            cnt2++;
+            r++;
         }
-        if(sum%2==1)
+        if(px>0 && r<px)
+        {
+            cout<<"NO"<<endl;
+        }
+        else if(px<0 && l<abs(px))
         {
             no
-            continue;
         }
-        sum/=2;
-        if(sum%2==0)
+        else if(py>0 && u<py)
         {
-            yes
+            no
         }
-        else if(sum%2==1 && cnt1!=0)
+        else if(py<0 && d<abs(py))
         {
-            yes
+            no
         }
         else
         {
-            no
+            yes
         }
-        
     }
 
     return 0;

@@ -23,38 +23,26 @@ int main()
     {
         int n;
         cin>>n;
-        vi v(n);
-        int cnt1=0;
-        int cnt2=0;
-        int sum=0;
+        unordered_map<int, int> freq;
+        unordered_map<int,int> ind;
         rep(i,n)
         {
-            cin>>v[i];
-            sum+=v[i];
-            if(v[i]==1)
-            cnt1++;
-            else
-            cnt2++;
+            int x;
+            cin>>x;
+            ind[x]=i+1;
+            freq[x]++;
         }
-        if(sum%2==1)
+        int ans=INT_MAX;
+        int k=-1;
+        for(auto it:freq)
         {
-            no
-            continue;
+            if(it.second==1 && ans>it.first)
+            {
+                ans=min(ans,it.first);
+                k=ind[it.first];
+            }
         }
-        sum/=2;
-        if(sum%2==0)
-        {
-            yes
-        }
-        else if(sum%2==1 && cnt1!=0)
-        {
-            yes
-        }
-        else
-        {
-            no
-        }
-        
+        cout<<k<<endl;
     }
 
     return 0;

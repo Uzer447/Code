@@ -21,40 +21,21 @@ int main()
     cin >> t;
     while (t--)
     {
-        int n;
-        cin>>n;
-        vi v(n);
-        int cnt1=0;
-        int cnt2=0;
-        int sum=0;
-        rep(i,n)
+        int n,k;
+        cin>>n>>k;
+        int ind=0;
+        vector<char> ch={'a','b','c'};
+        while(n>0)
         {
-            cin>>v[i];
-            sum+=v[i];
-            if(v[i]==1)
-            cnt1++;
-            else
-            cnt2++;
+            rep(i,min(n,k))
+            {
+                cout<<ch[ind];
+            }
+            n-=min(n,k);
+            ind++;
+            ind%=3;
         }
-        if(sum%2==1)
-        {
-            no
-            continue;
-        }
-        sum/=2;
-        if(sum%2==0)
-        {
-            yes
-        }
-        else if(sum%2==1 && cnt1!=0)
-        {
-            yes
-        }
-        else
-        {
-            no
-        }
-        
+        cout<<endl;
     }
 
     return 0;

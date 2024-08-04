@@ -21,40 +21,40 @@ int main()
     cin >> t;
     while (t--)
     {
-        int n;
-        cin>>n;
+        int n,k;
+        cin>>n>>k;
         vi v(n);
-        int cnt1=0;
-        int cnt2=0;
-        int sum=0;
+        int mx=0;
         rep(i,n)
         {
             cin>>v[i];
-            sum+=v[i];
-            if(v[i]==1)
-            cnt1++;
-            else
-            cnt2++;
+            mx=max(mx,v[i]);
         }
-        if(sum%2==1)
+        if(n*mx<k)
         {
-            no
+            cout<<"-1"<<endl;
             continue;
         }
-        sum/=2;
-        if(sum%2==0)
+        int ans=n+1;
+        for(int i=0;i<k;i++)
         {
-            yes
+            int x=-2;
+            for(int j=0;j<n-1;j++)
+            {
+                if(v[j]<v[j+1])
+                {
+                    x=j;
+                    break;
+                }
+            }
+            ans=x+1;
+            if(x==-2)
+            {
+                break;
+            }
+            v[x]++;
         }
-        else if(sum%2==1 && cnt1!=0)
-        {
-            yes
-        }
-        else
-        {
-            no
-        }
-        
+        cout<<ans<<endl;
     }
 
     return 0;

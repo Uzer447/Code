@@ -21,40 +21,22 @@ int main()
     cin >> t;
     while (t--)
     {
-        int n;
-        cin>>n;
+        int n,k;
+        cin>>n>>k;
         vi v(n);
-        int cnt1=0;
-        int cnt2=0;
-        int sum=0;
         rep(i,n)
         {
             cin>>v[i];
-            sum+=v[i];
-            if(v[i]==1)
-            cnt1++;
-            else
-            cnt2++;
         }
-        if(sum%2==1)
+        sort(vall(v));
+        int mini=v[0];
+        int ans=0;
+        for(int i=1;i<n;i++)
         {
-            no
-            continue;
+            int x=(k-v[i])/mini;
+            ans+=x;
         }
-        sum/=2;
-        if(sum%2==0)
-        {
-            yes
-        }
-        else if(sum%2==1 && cnt1!=0)
-        {
-            yes
-        }
-        else
-        {
-            no
-        }
-        
+        cout<<ans<<endl;
     }
 
     return 0;

@@ -23,38 +23,41 @@ int main()
     {
         int n;
         cin>>n;
-        vi v(n);
-        int cnt1=0;
-        int cnt2=0;
-        int sum=0;
+        vll v(n);
+        ll extra=0;
         rep(i,n)
         {
             cin>>v[i];
-            sum+=v[i];
-            if(v[i]==1)
-            cnt1++;
+            if(v[i]>=i)
+            {
+                extra+=v[i]-i;
+                v[i]=i;
+            }
             else
-            cnt2++;
+            {
+                int temp=min(extra,i-v[i]);
+                v[i]+=min(extra,i-v[i]);
+                extra-=temp;
+            }
         }
-        if(sum%2==1)
+        v[n-1]+=extra;
+        int flag=1;
+        rep(i,n-1)
         {
-            no
-            continue;
+            if(v[i+1]<=v[i])
+            {
+                flag=0;
+                break;
+            }
         }
-        sum/=2;
-        if(sum%2==0)
+        if(flag)
         {
-            yes
-        }
-        else if(sum%2==1 && cnt1!=0)
-        {
-            yes
+            yes;
         }
         else
         {
-            no
+            no;
         }
-        
     }
 
     return 0;

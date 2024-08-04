@@ -13,6 +13,15 @@
 using namespace std;
 const int MOD = 1e9+7;
 const int SIZE = 1e6+10;
+bool isPrime(int n)
+{
+    for(int i=2;i*i<=n;i++)
+    {
+        if(n%i==0)
+        return false;
+    }
+    return true;
+}
 int main()
 {
     // freopen("input.txt", "r", stdin);
@@ -23,38 +32,27 @@ int main()
     {
         int n;
         cin>>n;
-        vi v(n);
-        int cnt1=0;
-        int cnt2=0;
-        int sum=0;
-        rep(i,n)
+        vector<vector<int>> v(n,vector<int>(n,1));
+        int i=n+3;
+        while(true)
         {
-            cin>>v[i];
-            sum+=v[i];
-            if(v[i]==1)
-            cnt1++;
-            else
-            cnt2++;
+            if(isPrime(i) && !isPrime(i-n+1))
+            break;
+            i++;
         }
-        if(sum%2==1)
+        int x=i-(n-1);
+        rep(j,n)
         {
-            no
-            continue;
+            v[j][j]=x;
         }
-        sum/=2;
-        if(sum%2==0)
+        rep(j,n)
         {
-            yes
+            rep(k,n)
+            {
+                cout<<v[j][k]<<" ";
+            }
+            cout<<endl;
         }
-        else if(sum%2==1 && cnt1!=0)
-        {
-            yes
-        }
-        else
-        {
-            no
-        }
-        
     }
 
     return 0;

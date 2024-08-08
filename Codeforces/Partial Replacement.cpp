@@ -21,40 +21,41 @@ int main()
     cin >> t;
     while (t--)
     {
-        int n;
-        cin >> n;
+        int n, k;
+        cin >> n >> k;
         string s;
         cin >> s;
-        vector<int> t, m;
-        int flag = 1;
-        for (int i = 0; i < n; i++)
+        int first = -1;
+        int last = -1;
+        rep(i, n)
         {
-            if (s[i] == 'T')
-                t.push_back(i);
-            else
-                m.push_back(i);
-        }
-        if (t.size() != 2 * m.size())
-        {
-            no;
-            continue;
-        }
-        for (int i = 0; i < m.size(); i++)
-        {
-            if (m[i] < t[i] || m[i] > t[i + m.size()])
+            if (s[i] == '*' && first == -1)
             {
-                flag = 0;
-                break;
+                first = i;
+            }
+            if (s[i] == '*')
+            {
+                last = i;
             }
         }
-        if (flag)
+        // s[first]='x';
+        // s[last]='x';
+        s[first] = 'x';
+        int cnt = 1;
+        int i = first;
+        for (; i < last;)
         {
-            yes;
+            int temp;
+            for (int j = 0; j <= k; j++)
+            {
+                if (i+j<n && s[i + j] == '*')
+                    temp = i + j;
+            }
+            i = temp;
+            s[temp] = 'x';
+            cnt++;
         }
-        else
-        {
-            no;
-        }
+        cout << cnt << endl;
     }
 
     return 0;

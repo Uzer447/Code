@@ -25,36 +25,37 @@ int main()
         cin >> n;
         string s;
         cin >> s;
-        vector<int> t, m;
-        int flag = 1;
+        int cnt = 0;
         for (int i = 0; i < n; i++)
         {
-            if (s[i] == 'T')
-                t.push_back(i);
-            else
-                m.push_back(i);
+            cnt += (s[i] == '1');
         }
-        if (t.size() != 2 * m.size())
+        if (cnt % 2 == 1 || s[0] == '0' || s.back() == '0')
         {
-            no;
+            cout << "NO\n";
             continue;
         }
-        for (int i = 0; i < m.size(); i++)
+        string a, b;
+        int k = 0;
+        bool flip = false;
+        for (int i = 0; i < n; i++)
         {
-            if (m[i] < t[i] || m[i] > t[i + m.size()])
+            if (s[i] == '1')
             {
-                flag = 0;
-                break;
+                a.push_back(2 * k < cnt ? '(' : ')');
+                b.push_back(a.back());
+                k++;
+            }
+            else
+            {
+                a.push_back(flip ? '(' : ')');
+                b.push_back(flip ? ')' : '(');
+                flip = !flip;
             }
         }
-        if (flag)
-        {
-            yes;
-        }
-        else
-        {
-            no;
-        }
+        cout << "YES\n";
+        cout << a << "\n"
+             << b << endl;
     }
 
     return 0;

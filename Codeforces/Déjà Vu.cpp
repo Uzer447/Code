@@ -21,47 +21,39 @@ int main()
     cin >> t;
     while (t--)
     {
-        int n;
-        cin>>n;
-        vi v(n);
-        int first=-1;
-        int last=-1;
-        rep(i,n)
+        string s;
+        cin>>s;
+        int n=s.size();
+        int flag=-1;
+        for(int i=0;i<n;i++)
         {
-            cin>>v[i];
-            if(v[i]>0 && first==-1)
+            if(s[n-1-i]=='a')
             {
-                first=i;
+                continue;
             }
-            if(v[i]>0)
+            else
             {
-                last=i;
+                flag=i;
+                break;
             }
         }
-        vi psum(n,0);
-        psum[0]=v[0];
-        for(int i=1; i<n; i++)
+        if(flag==-1)
         {
-            psum[i]=psum[i-1]+v[i];
+            no;
         }
-        int ans=0;
-        for(int i=first;i<=last;i++)
+        else
         {
-            if(v[i]==0)
+            yes;
+            rep(i,n)
             {
-                int left=psum[i-1];
-                int right=psum[n-1]-psum[i];
-                if(abs(right-left)==1)
+                if(i==flag)
                 {
-                    ans++;
+                    cout<<'a';
                 }
-                else if(abs(right-left)==0)
-                {
-                    ans+=2;
-                }
+                cout<<s[i];
             }
+            cout<<endl;
         }
-        cout<<ans<<endl;
     }
 
     return 0;

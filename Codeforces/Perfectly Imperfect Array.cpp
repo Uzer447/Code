@@ -23,39 +23,25 @@ int main()
     {
         int n;
         cin >> n;
-        string s;
-        cin >> s;
-        vector<int> t, m;
-        int flag = 1;
-        for (int i = 0; i < n; i++)
+        int flag=0;
+        rep(i, n)
         {
-            if (s[i] == 'T')
-                t.push_back(i);
-            else
-                m.push_back(i);
-        }
-        if (t.size() != 2 * m.size())
-        {
-            no;
-            continue;
-        }
-        for (int i = 0; i < m.size(); i++)
-        {
-            if (m[i] < t[i] || m[i] > t[i + m.size()])
+            int x;
+            cin>>x;
+            int y=sqrt(x);
+            if(y*y!=x && flag==0)
             {
-                flag = 0;
-                break;
+                flag=1;
             }
         }
-        if (flag)
+        if(flag)
         {
-            yes;
+            cout<<"YES"<<endl;
         }
         else
         {
             no;
         }
     }
-
     return 0;
 }

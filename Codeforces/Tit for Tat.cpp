@@ -21,40 +21,28 @@ int main()
     cin >> t;
     while (t--)
     {
-        int n;
-        cin >> n;
-        string s;
-        cin >> s;
-        vector<int> t, m;
-        int flag = 1;
+        int n, k;
+        cin >> n >> k;
+        vi v(n);
+        rep(i, n)
+        {
+            cin >> v[i];
+        }
         for (int i = 0; i < n; i++)
         {
-            if (s[i] == 'T')
-                t.push_back(i);
-            else
-                m.push_back(i);
-        }
-        if (t.size() != 2 * m.size())
-        {
-            no;
-            continue;
-        }
-        for (int i = 0; i < m.size(); i++)
-        {
-            if (m[i] < t[i] || m[i] > t[i + m.size()])
+            if (v[i] > 0)
             {
-                flag = 0;
-                break;
+                int x = min(k, v[i]);
+                k -= x;
+                v[i] -= x;
+                v[n - 1] += x;
             }
         }
-        if (flag)
+        rep(i, n)
         {
-            yes;
+            cout << v[i] << " ";
         }
-        else
-        {
-            no;
-        }
+        cout << endl;
     }
 
     return 0;

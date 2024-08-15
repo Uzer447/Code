@@ -65,7 +65,9 @@
     "ostream": "cpp",
     "regex": "cpp",
     "random": "cpp",
-    "bitset": "cpp"
+    "bitset": "cpp",
+    "array": "cpp",
+    "utility": "cpp"
   },
   "C_Cpp.errorSquiggles": "disabled"
 }

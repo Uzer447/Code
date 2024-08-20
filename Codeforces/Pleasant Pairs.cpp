@@ -21,41 +21,24 @@ int main()
     cin >> t;
     while (t--)
     {
-        int n;
+        ll n;
         cin >> n;
-        vi a(n);
-        vi b(n);
-        rep(i, n)
-        {
+        vector<ll> a(n + 1);
+        a[0] = 0;
+        for (ll i = 1; i <= n; i++)
             cin >> a[i];
-        }
-        rep(i, n)
+        ll ans = 0;
+        for (ll i = 1; i <= n; i++)
         {
-            cin >> b[i];
-        }
-        for (int i = 1; i < n; i++)
-        {
-            b[i] = max(b[i - 1], b[i]);
-        }
-        int ans=INT_MAX;
-        for (int i = 0; i < n; i++)
-        {
-            int l = 0, r = n - 1;
-            while (l < r)
+            for (ll j = a[i] - i; j <= n; j += a[i])
             {
-                int mid = l + (r - l) / 2;
-                if (b[mid] > a[i])
-                {
-                    r = mid;
-                }
-                else
-                {
-                    l = mid + 1;
-                }
+                if (j <= i)
+                    continue;
+                if (a[i] * a[j] == i + j)
+                    ans++;
             }
-            ans = min(ans, i + r);
         }
-        cout << ans << '\n';
+        cout << ans << "\n";
     }
 
     return 0;

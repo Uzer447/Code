@@ -23,26 +23,15 @@ int main()
     {
         int n;
         cin>>n;
-        vi v(n);
-        int sum=0;
+        ll sum=0;
         rep(i,n)
         {
-            cin>>v[i];
-            sum+=v[i];
+            int x;
+            cin>>x;
+            sum+=x;
         }
-        if(sum%n!=0)
-        {
-            cout<<-1<<endl;
-            continue;
-        }
-        int k=0;
-        int x=sum/n;
-        rep(i,n)
-        {
-            if(v[i]>x)
-            k++;
-        }
-        cout<<k<<endl;
+        ll ans=sum%n;
+        cout<<ans*(n-ans)<<endl;
     }
 
     return 0;

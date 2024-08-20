@@ -21,28 +21,18 @@ int main()
     cin >> t;
     while (t--)
     {
-        int n;
-        cin>>n;
-        vi v(n);
-        int sum=0;
-        rep(i,n)
+        string s;
+        cin>>s;
+        int c1=0;
+        int c2=0;
+        for(char ch='a';ch<='z';ch++)
         {
-            cin>>v[i];
-            sum+=v[i];
+            if(count(vall(s),ch)>1)
+            c2++;
+            else if(count(vall(s),ch)==1)
+            c1++;
         }
-        if(sum%n!=0)
-        {
-            cout<<-1<<endl;
-            continue;
-        }
-        int k=0;
-        int x=sum/n;
-        rep(i,n)
-        {
-            if(v[i]>x)
-            k++;
-        }
-        cout<<k<<endl;
+        cout<<c2+(c1/2)<<endl;
     }
 
     return 0;

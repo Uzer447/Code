@@ -24,25 +24,33 @@ int main()
         int n;
         cin>>n;
         vi v(n);
-        int sum=0;
         rep(i,n)
         {
             cin>>v[i];
-            sum+=v[i];
         }
-        if(sum%n!=0)
+        int flag=1;
+        vi vis(n+1,0);
+        vis[v[0]]=1;
+        for(int i=1;i<n;i++)
         {
-            cout<<-1<<endl;
-            continue;
+            if((v[i]-1>=1 && vis[v[i]-1]==1) || (v[i]+1<=n && vis[v[i]+1]==1))
+            {
+                vis[v[i]]=1;
+            }
+            else
+            {
+                flag=0;
+                break;
+            }
         }
-        int k=0;
-        int x=sum/n;
-        rep(i,n)
+        if(flag)
         {
-            if(v[i]>x)
-            k++;
+            yes;
         }
-        cout<<k<<endl;
+        else
+        {
+            no;
+        }
     }
 
     return 0;

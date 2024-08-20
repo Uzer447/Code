@@ -23,26 +23,25 @@ int main()
     {
         int n;
         cin>>n;
-        vi v(n);
-        int sum=0;
+        string s;
+        cin>>s;
+        vector<pii> v;
         rep(i,n)
         {
-            cin>>v[i];
-            sum+=v[i];
+            if(s[i]!='0')
+            {
+                v.pb({s[i]-'0',i});
+            }
         }
-        if(sum%n!=0)
+        int ans=0;
+        for(auto it:v)
         {
-            cout<<-1<<endl;
-            continue;
+            if(it.second==n-1)
+            ans+=it.first;
+            else
+            ans+=it.first+1;
         }
-        int k=0;
-        int x=sum/n;
-        rep(i,n)
-        {
-            if(v[i]>x)
-            k++;
-        }
-        cout<<k<<endl;
+        cout<<ans<<endl;    
     }
 
     return 0;

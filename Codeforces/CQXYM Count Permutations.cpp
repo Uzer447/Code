@@ -19,30 +19,18 @@ int main()
     // freopen("output.txt", "w", stdout);
     int t;
     cin >> t;
+    vll f(100005);
+    f[0]=1;
+    f[1]=1;
+    for(int i=2;i<=100001;i++)
+    {
+        f[i]=((i<<1)-1LL)*f[i-1]%MOD * (i<<1)%MOD;
+    }
     while (t--)
     {
         int n;
         cin>>n;
-        vi v(n);
-        int sum=0;
-        rep(i,n)
-        {
-            cin>>v[i];
-            sum+=v[i];
-        }
-        if(sum%n!=0)
-        {
-            cout<<-1<<endl;
-            continue;
-        }
-        int k=0;
-        int x=sum/n;
-        rep(i,n)
-        {
-            if(v[i]>x)
-            k++;
-        }
-        cout<<k<<endl;
+        cout<<f[n]<<endl;
     }
 
     return 0;

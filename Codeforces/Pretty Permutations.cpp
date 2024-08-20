@@ -23,40 +23,38 @@ int main()
     {
         int n;
         cin >> n;
-        vi a(n);
-        vi b(n);
-        rep(i, n)
+        if (n == 1)
         {
-            cin >> a[i];
+            cout << "1" << endl;
         }
-        rep(i, n)
+        else if (n == 2)
         {
-            cin >> b[i];
+            cout << "2 1" << endl;
         }
-        for (int i = 1; i < n; i++)
+        else if (n == 3)
         {
-            b[i] = max(b[i - 1], b[i]);
+            cout << "3 1 2" << endl;
         }
-        int ans=INT_MAX;
-        for (int i = 0; i < n; i++)
+        else if (n % 2 == 1)
         {
-            int l = 0, r = n - 1;
-            while (l < r)
+            cout << "3 1 2 ";
+            for (int i = 4; i <= n; i++)
             {
-                int mid = l + (r - l) / 2;
-                if (b[mid] > a[i])
-                {
-                    r = mid;
-                }
-                else
-                {
-                    l = mid + 1;
-                }
+                cout << i + 1 << " " << i << " ";
+                i++;
             }
-            ans = min(ans, i + r);
+            cout<<endl;
         }
-        cout << ans << '\n';
+        else
+        {
+            for (int i = 1; i <= n; i++)
+            {
+                cout << i + 1 << " " << i << " ";
+                i++;
+            }
+            cout<<endl;
+        }
+        //cout << endl;
     }
-
     return 0;
 }

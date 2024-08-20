@@ -21,28 +21,16 @@ int main()
     cin >> t;
     while (t--)
     {
-        int n;
-        cin>>n;
-        vi v(n);
-        int sum=0;
-        rep(i,n)
+        ll a,b;
+        cin>>a>>b;
+        ll ans;
+        if(a==b)
         {
-            cin>>v[i];
-            sum+=v[i];
-        }
-        if(sum%n!=0)
-        {
-            cout<<-1<<endl;
+            cout<<"0 0"<<endl;
             continue;
         }
-        int k=0;
-        int x=sum/n;
-        rep(i,n)
-        {
-            if(v[i]>x)
-            k++;
-        }
-        cout<<k<<endl;
+        ans=max(a,b)-min(a,b);
+        cout<<ans<<" "<<min(max(a,b)%ans,ans-max(a,b)%ans)<<endl;
     }
 
     return 0;

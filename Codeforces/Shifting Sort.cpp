@@ -24,25 +24,35 @@ int main()
         int n;
         cin>>n;
         vi v(n);
-        int sum=0;
         rep(i,n)
         {
             cin>>v[i];
-            sum+=v[i];
         }
-        if(sum%n!=0)
+        vector<pii> ans;
+        for(int i=0;i<n-1;i++)
         {
-            cout<<-1<<endl;
-            continue;
+            int pos=i;
+            for(int j=i+1;j<n;j++)
+            {
+                if(v[j]<v[pos])
+                pos=j;
+            }
+            if(pos>i)
+            {
+                ans.pb({i,pos});
+                int opt=v[pos];
+                for(int j=pos;j>i;j--)
+                {
+                    v[j]=v[j-1];
+                }
+                v[i]=opt;
+            }
         }
-        int k=0;
-        int x=sum/n;
-        rep(i,n)
+        cout<<ans.size()<<endl;
+        for(auto &it:ans)
         {
-            if(v[i]>x)
-            k++;
+            cout<<it.first+1<<" "<<it.second+1<<" "<<it.second-it.first<<endl;
         }
-        cout<<k<<endl;
     }
 
     return 0;

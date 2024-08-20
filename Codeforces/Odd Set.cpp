@@ -3,16 +3,16 @@
 #define endl "\n"
 #define ll long long
 #define pb push_back
-#define pii pair<int,int>
+#define pii pair<int, int>
 #define vall(X) (X).begin(), (X).end()
 #define vi vector<int>
 #define vll vector<long long>
-#define yes cout<<"YES\n";
-#define no cout<<"NO\n";
-#define print(X) cout<<X<<endl;
+#define yes cout << "YES\n";
+#define no cout << "NO\n";
+#define print(X) cout << X << endl;
 using namespace std;
-const int MOD = 1e9+7;
-const int SIZE = 1e6+10;
+const int MOD = 1e9 + 7;
+const int SIZE = 1e6 + 10;
 int main()
 {
     // freopen("input.txt", "r", stdin);
@@ -22,27 +22,24 @@ int main()
     while (t--)
     {
         int n;
-        cin>>n;
-        vi v(n);
-        int sum=0;
-        rep(i,n)
+        cin >> n;
+        int odd = 0;
+        int even = 0;
+        rep(i, 2 * n)
         {
-            cin>>v[i];
-            sum+=v[i];
+            int x;
+            cin >> x;
+            if (x % 2 == 0)
+                even++;
         }
-        if(sum%n!=0)
+        if (even == n)
         {
-            cout<<-1<<endl;
-            continue;
+            yes;
         }
-        int k=0;
-        int x=sum/n;
-        rep(i,n)
+        else
         {
-            if(v[i]>x)
-            k++;
+            no;
         }
-        cout<<k<<endl;
     }
 
     return 0;

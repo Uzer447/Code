@@ -21,28 +21,16 @@ int main()
     cin >> t;
     while (t--)
     {
-        int n;
-        cin>>n;
-        vi v(n);
-        int sum=0;
-        rep(i,n)
+        int a;
+        cin>>a;
+        if((a>=102 && a<=109) || (a>=1010 && a<=1099))
         {
-            cin>>v[i];
-            sum+=v[i];
+            yes;
         }
-        if(sum%n!=0)
+        else
         {
-            cout<<-1<<endl;
-            continue;
+            no;
         }
-        int k=0;
-        int x=sum/n;
-        rep(i,n)
-        {
-            if(v[i]>x)
-            k++;
-        }
-        cout<<k<<endl;
     }
 
     return 0;

@@ -23,39 +23,30 @@ int main()
     {
         int n;
         cin >> n;
-        vi a(n);
-        vi b(n);
-        rep(i, n)
-        {
-            cin >> a[i];
-        }
-        rep(i, n)
-        {
-            cin >> b[i];
-        }
-        for (int i = 1; i < n; i++)
-        {
-            b[i] = max(b[i - 1], b[i]);
-        }
-        int ans=INT_MAX;
+        string s;
+        cin >> s;
+        bool solved = false;
         for (int i = 0; i < n; i++)
         {
-            int l = 0, r = n - 1;
-            while (l < r)
+            if (s[i] == '0')
             {
-                int mid = l + (r - l) / 2;
-                if (b[mid] > a[i])
+                solved = true;
+                if (i >= n / 2)
                 {
-                    r = mid;
+                    cout << 1 << " " << i + 1 << " " << 1 << " " << i << endl;
+                    break;
                 }
                 else
                 {
-                    l = mid + 1;
+                    cout << i + 2 << " " << n << " " << i + 1 << " " << n << endl;
+                    break;
                 }
             }
-            ans = min(ans, i + r);
         }
-        cout << ans << '\n';
+        if (!solved)
+        {
+            cout << 1 << " " << n - 1 << " " << 2 << " " << n << endl;
+        }
     }
 
     return 0;

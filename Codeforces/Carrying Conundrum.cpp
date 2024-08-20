@@ -21,28 +21,22 @@ int main()
     cin >> t;
     while (t--)
     {
-        int n;
+        string n;
         cin>>n;
-        vi v(n);
-        int sum=0;
-        rep(i,n)
+        ll a=0;
+        ll b=0;
+        for(int i=0;i<n.size();i++)
         {
-            cin>>v[i];
-            sum+=v[i];
+            if(i%2==0)
+            {
+                a=a*10+(n[i]-'0');
+            }
+            else
+            {
+                b=b*10+(n[i]-'0');
+            }
         }
-        if(sum%n!=0)
-        {
-            cout<<-1<<endl;
-            continue;
-        }
-        int k=0;
-        int x=sum/n;
-        rep(i,n)
-        {
-            if(v[i]>x)
-            k++;
-        }
-        cout<<k<<endl;
+        cout<<(a+1)*(b+1)-2<<endl;
     }
 
     return 0;

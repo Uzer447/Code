@@ -21,28 +21,29 @@ int main()
     cin >> t;
     while (t--)
     {
-        int n;
-        cin>>n;
+        int n,l,r;
+        cin>>n>>l>>r;
         vi v(n);
-        int sum=0;
         rep(i,n)
         {
             cin>>v[i];
-            sum+=v[i];
         }
-        if(sum%n!=0)
+        sort(vall(v));
+        ll ans=0;
+        for(int i=0;i<n;i++)
         {
-            cout<<-1<<endl;
-            continue;
+            int lb=l-v[i];
+            int ub=r-v[i];
+            int x=lower_bound(v.begin(),v.end(),lb)-v.begin();
+            int y=upper_bound(v.begin(),v.end(),ub)-v.begin();
+            //cout<<x<<" "<<y<<endl;
+            ans=ans+y-x;
+            if(l<=2*v[i] && 2*v[i]<=r)
+            {
+                ans--;
+            }
         }
-        int k=0;
-        int x=sum/n;
-        rep(i,n)
-        {
-            if(v[i]>x)
-            k++;
-        }
-        cout<<k<<endl;
+        cout<<ans/2<<endl;
     }
 
     return 0;

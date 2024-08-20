@@ -24,25 +24,34 @@ int main()
         int n;
         cin>>n;
         vi v(n);
-        int sum=0;
+        vector<vector<int>> cnt(100005,vector<int>(2,0));
         rep(i,n)
         {
             cin>>v[i];
-            sum+=v[i];
+            cnt[v[i]][i%2]++;
         }
-        if(sum%n!=0)
-        {
-            cout<<-1<<endl;
-            continue;
-        }
-        int k=0;
-        int x=sum/n;
+        sort(vall(v));
         rep(i,n)
         {
-            if(v[i]>x)
-            k++;
+            cnt[v[i]][i%2]--;
         }
-        cout<<k<<endl;
+        int flag=1;
+        rep(i,n)
+        {
+            if(cnt[v[i]][0]!=0 || cnt[v[i]][1]!=0)
+            {
+                flag=0;
+                break;
+            }
+        }
+        if(flag)
+        {
+            yes;
+        }
+        else
+        {
+            no;
+        }
     }
 
     return 0;

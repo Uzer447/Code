@@ -21,28 +21,25 @@ int main()
     cin >> t;
     while (t--)
     {
-        int n;
-        cin>>n;
-        vi v(n);
-        int sum=0;
+        int n,m;
+        cin>>n>>m;
+        n=n*2-1;
+        vector<char> ans(m,0);
         rep(i,n)
         {
-            cin>>v[i];
-            sum+=v[i];
+            string s;
+            cin>>s;
+            rep(j,m)
+            {
+                ans[j]=ans[j]^s[j];
+            }
         }
-        if(sum%n!=0)
+        string temp="";
+        rep(i,m)
         {
-            cout<<-1<<endl;
-            continue;
+            temp=temp+ans[i];
         }
-        int k=0;
-        int x=sum/n;
-        rep(i,n)
-        {
-            if(v[i]>x)
-            k++;
-        }
-        cout<<k<<endl;
+        cout<<temp<<endl;
     }
 
     return 0;

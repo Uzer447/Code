@@ -21,28 +21,31 @@ int main()
     cin >> t;
     while (t--)
     {
-        int n;
-        cin>>n;
-        vi v(n);
-        int sum=0;
+        int n,k;
+        cin>>n>>k;
+        vector<pii> v(n);
         rep(i,n)
         {
-            cin>>v[i];
-            sum+=v[i];
+            cin>>v[i].first;
+            v[i].second=i;
         }
-        if(sum%n!=0)
+        sort(vall(v));
+        int temp=0;
+        for(int i=1;i<n;i++)
         {
-            cout<<-1<<endl;
-            continue;
+            if(v[i-1].second+1!=v[i].second)
+            {
+                temp++;
+            }
         }
-        int k=0;
-        int x=sum/n;
-        rep(i,n)
+        if(temp+1<=k)
         {
-            if(v[i]>x)
-            k++;
+            yes;
         }
-        cout<<k<<endl;
+        else
+        {
+            no;
+        }
     }
 
     return 0;

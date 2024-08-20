@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#include <iomanip>
 #define rep(I, N) for (int I = 0; I < (N); ++I)
 #define endl "\n"
 #define ll long long
@@ -24,25 +25,15 @@ int main()
         int n;
         cin>>n;
         vi v(n);
-        int sum=0;
+        double sum=0;
         rep(i,n)
         {
             cin>>v[i];
             sum+=v[i];
         }
-        if(sum%n!=0)
-        {
-            cout<<-1<<endl;
-            continue;
-        }
-        int k=0;
-        int x=sum/n;
-        rep(i,n)
-        {
-            if(v[i]>x)
-            k++;
-        }
-        cout<<k<<endl;
+        sort(vall(v));
+        sum-=v[n-1];
+        cout<<sum/(1.0*(n-1))+v[n-1]<<endl;
     }
 
     return 0;

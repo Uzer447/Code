@@ -23,26 +23,32 @@ int main()
     {
         int n;
         cin>>n;
-        vi v(n);
-        int sum=0;
+        string a,b;
+        cin>>a>>b;
+        int ans=0;
         rep(i,n)
         {
-            cin>>v[i];
-            sum+=v[i];
+            if(b[i]=='1')
+            {
+                if(a[i]=='0' && a[i]!='2')
+                {
+                    ans++;
+                    a[i]=='2';
+                }
+                else if(i-1>=0 && a[i-1]=='1' && a[i-1]!='2')
+                {
+                    ans++;
+                    a[i-1]='2';
+                }
+                else if(i+1<n && a[i+1]=='1' && a[i+1]!='2')
+                {
+                    ans++;
+                    a[i+1]='2';
+                }
+            }
+            //cout<<a<<endl;
         }
-        if(sum%n!=0)
-        {
-            cout<<-1<<endl;
-            continue;
-        }
-        int k=0;
-        int x=sum/n;
-        rep(i,n)
-        {
-            if(v[i]>x)
-            k++;
-        }
-        cout<<k<<endl;
+        cout<<ans<<endl;
     }
 
     return 0;

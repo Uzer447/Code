@@ -23,26 +23,16 @@ int main()
     {
         int n;
         cin>>n;
-        vi v(n);
-        int sum=0;
+        string s;
+        cin>>s;
         rep(i,n)
         {
-            cin>>v[i];
-            sum+=v[i];
+            if(s[i]=='U')
+            s[i]='D';
+            else if(s[i]=='D')
+            s[i]='U';
         }
-        if(sum%n!=0)
-        {
-            cout<<-1<<endl;
-            continue;
-        }
-        int k=0;
-        int x=sum/n;
-        rep(i,n)
-        {
-            if(v[i]>x)
-            k++;
-        }
-        cout<<k<<endl;
+        cout<<s<<endl;
     }
 
     return 0;

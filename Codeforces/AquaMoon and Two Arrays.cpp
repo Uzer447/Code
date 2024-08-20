@@ -23,39 +23,45 @@ int main()
     {
         int n;
         cin >> n;
-        vi a(n);
-        vi b(n);
-        rep(i, n)
+        vi a(n + 1);
+        vi b(n + 1);
+        int sum = 0;
+        for (int i = 1; i <= n; i++)
         {
             cin >> a[i];
         }
         rep(i, n)
         {
-            cin >> b[i];
+            cin >> b[i + 1];
+            a[i+1] -= b[i + 1];
+            sum+=a[i+1];
         }
-        for (int i = 1; i < n; i++)
+        if (sum != 0)
         {
-            b[i] = max(b[i - 1], b[i]);
+            cout << -1 << endl;
         }
-        int ans=INT_MAX;
-        for (int i = 0; i < n; i++)
+        else
         {
-            int l = 0, r = n - 1;
-            while (l < r)
+            vector<pii> ans;
+            for (int i = 1; i <= n; i++)
             {
-                int mid = l + (r - l) / 2;
-                if (b[mid] > a[i])
+                for (int j = 1; j <= a[i]; j++)
                 {
-                    r = mid;
-                }
-                else
-                {
-                    l = mid + 1;
+                    for (int k = 1; k <= n; k++)
+                        if (a[k] < 0)
+                        {
+                            ans.push_back(make_pair(i, k));
+                            ++a[k];
+                            break;
+                        }
                 }
             }
-            ans = min(ans, i + r);
+            cout << ans.size() << endl;
+            for (auto it : ans)
+            {
+                cout << it.first << " " << it.second << endl;
+            }
         }
-        cout << ans << '\n';
     }
 
     return 0;

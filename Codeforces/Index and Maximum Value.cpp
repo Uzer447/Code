@@ -21,48 +21,30 @@ int main()
     cin >> t;
     while (t--)
     {
-        ll n,m,k;
-        cin>>n>>m>>k;
-        if(m<n-1)
+        int n,m;
+        cin>>n>>m;
+        vi v(n);
+        rep(i,n)
         {
-            no;
-            continue;
+            cin>>v[i];
         }
-        else if(m>((n*(n-1)/2)))
+        int maxi=max_element(vall(v))-v.begin();
+        while(m--)
         {
-            no;
-            continue;
-        }
-        if(n==1)
-        {
-            if(k>1)
+            char ch;
+            cin>>ch;
+            int l,r;
+            cin>>l>>r;
+            if(v[maxi]>=l && v[maxi]<=r)
             {
-                yes;
+                if(ch=='+')
+                v[maxi]++;
+                else
+                v[maxi]--;
             }
-            else
-            {
-                no;
-            }
+            cout<<v[maxi]<<" ";
         }
-        else if(m<((n*(n-1)/2)))
-        {
-            if(k>3)
-            {
-                yes;
-            }
-            else
-            {
-                no;
-            }
-        }
-        else if(k>2)
-        {
-            yes;
-        }
-        else
-        {
-            no;
-        }
+        cout<<endl;
     }
 
     return 0;

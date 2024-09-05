@@ -21,21 +21,15 @@ int main()
     cin >> t;
     while (t--)
     {
-        ll n,m,k;
-        cin>>n>>m>>k;
-        if(m<n-1)
+        int a,b;
+        cin>>a>>b;
+        if((a+2*b)%2==0)
         {
-            no;
-            continue;
-        }
-        else if(m>((n*(n-1)/2)))
-        {
-            no;
-            continue;
-        }
-        if(n==1)
-        {
-            if(k>1)
+            b=b%2;
+            b-=a/2;
+            b=max(0,b);
+            a=a%2;
+            if(a%2==0 && b%2==0)
             {
                 yes;
             }
@@ -43,21 +37,6 @@ int main()
             {
                 no;
             }
-        }
-        else if(m<((n*(n-1)/2)))
-        {
-            if(k>3)
-            {
-                yes;
-            }
-            else
-            {
-                no;
-            }
-        }
-        else if(k>2)
-        {
-            yes;
         }
         else
         {

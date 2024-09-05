@@ -21,47 +21,51 @@ int main()
     cin >> t;
     while (t--)
     {
-        ll n,m,k;
-        cin>>n>>m>>k;
-        if(m<n-1)
+        int n,x;
+        cin>>n>>x;
+        vi v(n);
+        rep(i,n)
         {
-            no;
-            continue;
+            cin>>v[i];
         }
-        else if(m>((n*(n-1)/2)))
+        int flag=1;
+        for(int i=0;i<n-1;i++)
         {
-            no;
-            continue;
-        }
-        if(n==1)
-        {
-            if(k>1)
+            if(v[i+1]<v[i])
             {
-                yes;
-            }
-            else
-            {
-                no;
+                flag=0;
+                break;
             }
         }
-        else if(m<((n*(n-1)/2)))
-        {
-            if(k>3)
-            {
-                yes;
-            }
-            else
-            {
-                no;
-            }
-        }
-        else if(k>2)
+        if(flag)
         {
             yes;
         }
         else
         {
-            no;
+            if(2*x<=n)
+            {
+                yes;
+            }
+            else
+            {
+                vi temp=v;
+                int flag=1;
+                sort(vall(temp));
+                for(int i=n-x;i<x;i++)
+                {
+                    if(temp[i]!=v[i])
+                    flag=0;
+                }
+                if(flag)
+                {
+                    yes;
+                }
+                else
+                {
+                    no;
+                }
+            }
         }
     }
 

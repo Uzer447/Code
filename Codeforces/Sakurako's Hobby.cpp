@@ -21,48 +21,42 @@ int main()
     cin >> t;
     while (t--)
     {
-        ll n,m,k;
-        cin>>n>>m>>k;
-        if(m<n-1)
+        ll n;
+        cin>>n;
+        vll p(n+1);
+        vll b(n+1);
+        vll us(n+1);
+        for(int i=1;i<=n;i++)
         {
-            no;
-            continue;
+            cin>>p[i];
         }
-        else if(m>((n*(n-1)/2)))
+        string s;
+        cin>>s;
+        for(int i=1;i<=n;i++)
         {
-            no;
-            continue;
-        }
-        if(n==1)
-        {
-            if(k>1)
+            if(us[i])
             {
-                yes;
+                continue;
             }
-            else
+            int sz=0;
+            while(!us[i])
             {
-                no;
+                us[i]=1;
+                sz+=s[i-1]=='0';
+                i=p[i];
             }
-        }
-        else if(m<((n*(n-1)/2)))
-        {
-            if(k>3)
+            while(us[i]!=2)
             {
-                yes;
-            }
-            else
-            {
-                no;
+                b[i]=sz;
+                us[i]=2;
+                i=p[i];
             }
         }
-        else if(k>2)
+        for(int i=1;i<=n;i++)
         {
-            yes;
+            cout<<b[i]<<" ";
         }
-        else
-        {
-            no;
-        }
+        cout<<endl;
     }
 
     return 0;

@@ -7,8 +7,8 @@
 #define vall(X) (X).begin(), (X).end()
 #define vi vector<int>
 #define vll vector<long long>
-#define yes cout<<"YES\n";
-#define no cout<<"NO\n";
+#define yes cout<<"Yes\n";
+#define no cout<<"No\n";
 #define print(X) cout<<X<<endl;
 using namespace std;
 const int MOD = 1e9+7;
@@ -21,21 +21,36 @@ int main()
     cin >> t;
     while (t--)
     {
-        ll n,m,k;
-        cin>>n>>m>>k;
-        if(m<n-1)
+        int n;
+        cin>>n;
+        string s;
+        cin>>s;
+        int x=sqrt(n);
+        if(x*x==n)
         {
-            no;
-            continue;
-        }
-        else if(m>((n*(n-1)/2)))
-        {
-            no;
-            continue;
-        }
-        if(n==1)
-        {
-            if(k>1)
+            int flag=1;
+            rep(i,n)
+            {
+                int row=i/x;
+                int col=i%x;
+                if(row==0 || row==x-1 || col==0 || col==x-1)
+                {
+                    if(s[i]!='1')
+                    {
+                        flag=0;
+                        break;
+                    }
+                }
+                else
+                {
+                    if(s[i]!='0')
+                    {
+                        flag=0;
+                        break;
+                    }
+                }
+            }
+            if(flag)
             {
                 yes;
             }
@@ -43,21 +58,6 @@ int main()
             {
                 no;
             }
-        }
-        else if(m<((n*(n-1)/2)))
-        {
-            if(k>3)
-            {
-                yes;
-            }
-            else
-            {
-                no;
-            }
-        }
-        else if(k>2)
-        {
-            yes;
         }
         else
         {

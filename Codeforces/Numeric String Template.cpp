@@ -21,21 +21,41 @@ int main()
     cin >> t;
     while (t--)
     {
-        ll n,m,k;
-        cin>>n>>m>>k;
-        if(m<n-1)
+        int n;
+        cin>>n;
+        vi v(n);
+        rep(i,n)
         {
-            no;
-            continue;
+            cin>>v[i];
         }
-        else if(m>((n*(n-1)/2)))
+        int m;
+        cin>>m;
+        rep(i,m)
         {
-            no;
-            continue;
-        }
-        if(n==1)
-        {
-            if(k>1)
+            string s;
+            cin>>s;
+            map<char,int> m1;
+            map<int,char> m2;
+            if(s.size()!=v.size())
+            {
+                no;
+                continue;
+            }
+            bool ok=true;
+            rep(j,n)
+            {
+                if(m1.find(s[j])==m1.end() && m2.find(v[j])==m2.end())
+                {
+                    m1[s[j]]=v[j];
+                    m2[v[j]]=s[j];
+                }
+                else if((m1.find(s[j])!=m1.end() && m1[s[j]]!=v[j]) || (m2.find(v[j])!=m2.end() && m2[v[j]]!=s[j]))
+                {
+                    ok=false;
+                    break;
+                }
+            }
+            if(ok)
             {
                 yes;
             }
@@ -43,25 +63,6 @@ int main()
             {
                 no;
             }
-        }
-        else if(m<((n*(n-1)/2)))
-        {
-            if(k>3)
-            {
-                yes;
-            }
-            else
-            {
-                no;
-            }
-        }
-        else if(k>2)
-        {
-            yes;
-        }
-        else
-        {
-            no;
         }
     }
 

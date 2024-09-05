@@ -21,25 +21,22 @@ int main()
     cin >> t;
     while (t--)
     {
-        int n;
-        cin>>n;
-        vector<pii> v(n);
+        int n,a,b;
+        cin>>n>>a>>b;
+        a=__gcd(a,b);
+        vi v(n);
         rep(i,n)
         {
-            cin>>v[i].first;
-            cin>>v[i].second;
+            cin>>v[i];
+            v[i]%=a;
         }
-        map<int,int> mp;
-        rep(i,n)
+        sort(vall(v));
+        int mn=v[n-1]-v[0];
+        for(int i=1;i<n;i++)
         {
-            mp[v[i].first]++;
+            mn=min(mn,v[i-1]+a-v[i]);
         }
-        int ans=0;
-        for(auto it:mp)
-        {
-            ans+=((it.second*(it.second-1))/2)*(n-1);
-        }
-        cout<<ans<<endl;
+        cout<<mn<<endl;
     }
 
     return 0;

@@ -21,49 +21,36 @@ int main()
     cin >> t;
     while (t--)
     {
-        ll n,m,k;
-        cin>>n>>m>>k;
-        if(m<n-1)
+        string s;
+        cin>>s;
+        int n=s.size();
+        int x1=n-1;
+        int ans1=0;
+        int x2=n-1;
+        int ans2=0;
+        while(x1>=0 && s[x1]!='0')
         {
-            no;
-            continue;
+            x1--;
+            ans1++;
         }
-        else if(m>((n*(n-1)/2)))
+        while(x2>=0 && s[x2]!='5')
         {
-            no;
-            continue;
+            x2--;
+            ans2++;
         }
-        if(n==1)
+        int y1=x1-1;
+        while(y1>=0 && s[y1]!='0' && s[y1]!='5')
         {
-            if(k>1)
-            {
-                yes;
-            }
-            else
-            {
-                no;
-            }
+            y1--;
+            ans1++;
         }
-        else if(m<((n*(n-1)/2)))
+        int y2=x2-1;
+        while(y2>=0 && s[y2]!='2' && s[y2]!='7')
         {
-            if(k>3)
-            {
-                yes;
-            }
-            else
-            {
-                no;
-            }
+            y2--;
+            ans2++;
         }
-        else if(k>2)
-        {
-            yes;
-        }
-        else
-        {
-            no;
-        }
+        cout<<min(ans1,ans2)<<endl;
     }
-
     return 0;
 }

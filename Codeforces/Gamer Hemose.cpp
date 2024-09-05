@@ -21,48 +21,30 @@ int main()
     cin >> t;
     while (t--)
     {
-        ll n,m,k;
-        cin>>n>>m>>k;
-        if(m<n-1)
+        int n,h;
+        cin>>n>>h;
+        vi v(n);
+        rep(i,n)
         {
-            no;
-            continue;
+            cin>>v[i];
         }
-        else if(m>((n*(n-1)/2)))
+        sort(vall(v));
+        int x=v[n-1];
+        int y=v[n-2];
+        int ans;
+        if(h%(x+y)==0)
         {
-            no;
-            continue;
+            ans=2*(h/(x+y));
         }
-        if(n==1)
+        else if(h%(x+y)<=x)
         {
-            if(k>1)
-            {
-                yes;
-            }
-            else
-            {
-                no;
-            }
-        }
-        else if(m<((n*(n-1)/2)))
-        {
-            if(k>3)
-            {
-                yes;
-            }
-            else
-            {
-                no;
-            }
-        }
-        else if(k>2)
-        {
-            yes;
+            ans=2*(h/(x+y))+1;
         }
         else
         {
-            no;
+            ans=2*(h/(x+y))+2;
         }
+        cout<<ans<<endl;
     }
 
     return 0;

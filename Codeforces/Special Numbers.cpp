@@ -21,48 +21,24 @@ int main()
     cin >> t;
     while (t--)
     {
-        ll n,m,k;
-        cin>>n>>m>>k;
-        if(m<n-1)
+        ll n,k;
+        cin>>n>>k;
+        ll ans=0;
+        ll p=1;
+        while(k>0)
         {
-            no;
-            continue;
-        }
-        else if(m>((n*(n-1)/2)))
-        {
-            no;
-            continue;
-        }
-        if(n==1)
-        {
-            if(k>1)
+            if(k%2==1)
             {
-                yes;
+                ans=(ans+p)%MOD;
+                p=(p*n)%MOD;
             }
             else
             {
-                no;
+                p=(p*n)%MOD;
             }
+            k/=2;
         }
-        else if(m<((n*(n-1)/2)))
-        {
-            if(k>3)
-            {
-                yes;
-            }
-            else
-            {
-                no;
-            }
-        }
-        else if(k>2)
-        {
-            yes;
-        }
-        else
-        {
-            no;
-        }
+        cout<<ans<<endl;
     }
 
     return 0;

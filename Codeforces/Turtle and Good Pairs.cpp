@@ -23,23 +23,39 @@ int main()
     {
         int n;
         cin>>n;
-        vector<pii> v(n);
+        string s;
+        cin>>s;
+        vector<pii> freq;
+        rep(i,26)
+        {
+            freq.pb({0,i});
+        }
         rep(i,n)
         {
-            cin>>v[i].first;
-            cin>>v[i].second;
+            freq[s[i]-'a'].first++;
         }
-        map<int,int> mp;
-        rep(i,n)
+        queue<pii> q;
+        sort(freq.begin(),freq.end(),greater<pii>());
+        while(freq[0].first > freq[1].first)
         {
-            mp[v[i].first]++;
+            cout<<(char)('a'+freq[0].second);
+            freq[0].first--;
         }
-        int ans=0;
-        for(auto it:mp)
+        for(int i=0;i<freq.size();i++)
         {
-            ans+=((it.second*(it.second-1))/2)*(n-1);
+            q.push(freq[i]);
         }
-        cout<<ans<<endl;
+        while(!q.empty())
+        {
+            pii p=q.front();
+            q.pop();
+            if(!p.first)
+            continue;
+            cout<<(char)('a'+p.second);
+            --p.first;
+            q.push(p);
+        }
+        cout<<endl;
     }
 
     return 0;

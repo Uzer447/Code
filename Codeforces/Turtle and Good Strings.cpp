@@ -21,41 +21,23 @@ int main()
     cin >> t;
     while (t--)
     {
-        ll n,m,k;
-        cin>>n>>m>>k;
-        if(m<n-1)
-        {
-            no;
-            continue;
-        }
-        else if(m>((n*(n-1)/2)))
-        {
-            no;
-            continue;
-        }
-        if(n==1)
-        {
-            if(k>1)
-            {
-                yes;
-            }
-            else
-            {
-                no;
-            }
-        }
-        else if(m<((n*(n-1)/2)))
-        {
-            if(k>3)
-            {
-                yes;
-            }
-            else
-            {
-                no;
-            }
-        }
-        else if(k>2)
+        int n;
+        cin>>n;
+        string s;
+        cin>>s;
+        int l=0;
+        int flag=0;
+        int r=n-1;
+        // while(l<r)
+        // {
+        //     if(s[l]!=s[r])
+        //     {
+        //         flag=1;
+        //         break;
+        //     }
+        //     r--;
+        // }
+        if(s[l]!=s[r])
         {
             yes;
         }

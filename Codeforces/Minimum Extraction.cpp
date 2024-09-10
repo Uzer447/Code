@@ -6,6 +6,10 @@
 #define pii pair<int,int>
 #define vall(X) (X).begin(), (X).end()
 #define vi vector<int>
+#define vll vector<long long>
+#define yes cout<<"YES\n";
+#define no cout<<"NO\n";
+#define print(X) cout<<X<<endl;
 using namespace std;
 const int MOD = 1e9+7;
 const int SIZE = 1e6+10;
@@ -19,36 +23,24 @@ int main()
     {
         int n;
         cin>>n;
-        priority_queue<pii> pq;
+        priority_queue<int,vector<int>,greater<int>> pq;
         rep(i,n)
         {
             int x;
             cin>>x;
-            pq.push({x,i});
+            pq.push(x);
         }
-        ll j=1;
-        ll temp=0;
-        unordered_map<int,int> mp;
-        vi ans(n);
-        while(!pq.empty())
+        int curr=0;
+        int ans=INT_MIN;
+        while(pq.size()>1)
         {
-            pii p=pq.top();
+            int temp=pq.top();
             pq.pop();
-            ans[p.second]=j;
-            temp+=(p.first*abs(j));
-            if(j>0)
-            j*=-1;
-            else
-            {
-                j*=-1;
-                j++;
-            }
+            ans=max(ans,temp-curr);
+            curr=curr+(temp-curr);
         }
-        cout<<2*temp<<endl;
-        cout<<"0 ";
-        for(auto it:ans)
-        cout<<it<<" ";
-        cout<<endl;
+        ans=max(ans,pq.top()-curr);
+        cout<<ans<<endl;
     }
 
     return 0;

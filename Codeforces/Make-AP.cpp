@@ -15,7 +15,27 @@ const int MOD = 1e9+7;
 const int SIZE = 1e6+10;
 int main()
 {
-    
+    // freopen("input.txt", "r", stdin);
+    // freopen("output.txt", "w", stdout);
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        ll a,b,c;
+        cin>>a>>b>>c;
+        if((a+c)%2!=0)
+        {
+            no;
+        }
+        // else if(((a+c)/2)%b!=0)
+        // {
+        //     no;
+        // }
+        else
+        {
+            yes;
+        }
+    }
 
     return 0;
 }
